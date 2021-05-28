@@ -1,0 +1,121 @@
+{% load static%}
+
+{%block title%}
+{%endblock title%}
+
+<head>
+  <title>Logan Scheid</title>
+  <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
+  {%block content_css%}
+  <link rel="stylesheet" href="https://unpkg.com/98.css" >
+  <link rel="stylesheet" href="{% static 'css/windows.css' %}">
+  {%endblock content_css%}
+
+  {%block scripts%}
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="{% static 'js/windows.js' %}"></script>
+  <script type="text/javascript" src="https://js-dos.com/6.22/current/js-dos.js"></script>
+      <script type="text/javascript" src="{% static '/js/three.min.js' %}"></script>
+      <script type="text/javascript" src="{% static '/js/rocket.js' %}" defer></script>
+  {%endblock scripts%}
+</head>
+
+{% block content %}
+<body>
+  <div class="desktop">
+    <div id="desktop-icons">
+      <div id="logan-icon" class="desktop-icon" onclick="highlightIcon(this)" ondblclick="openDraggableWindow(this)">
+        <img src="{% static 'images/icons/logan.png' %}">
+        <p>Logan.exe</p>
+      </div>
+      <div id="projects-icon" class="desktop-icon" onclick="highlightIcon(this)" ondblclick="openDraggableWindow(this)">
+        <img src="{% static 'images/icons/projects.png' %}">
+        <p>Projects.exe</p>
+      </div>
+      <div id="my-resume-icon" class="desktop-icon" onclick="highlightIcon(this)" ondblclick="openDraggableWindow(this)">
+        <img src="{% static 'images/icons/resume.png' %}">
+        <p>My_Resume.exe</p>
+      </div>
+      <div id="contact-me-icon" class="desktop-icon" onclick="highlightIcon(this)" ondblclick="openDraggableWindow(this)">
+        <img src="{% static 'images/icons/contactme.png' %}">
+        <p>Contact_Me.exe</p>
+      </div>
+      <a class="desktop-icon" href="https://github.com/djquigon" target="_blank">
+        <img class="shortcut" src="{% static 'images/icons/overlay_shortcut.png' %}">
+        <img src="{% static 'images/icons/github.png' %}">
+        <p>Github.html</p>
+      </a>
+      <a class="desktop-icon" href="https://www.linkedin.com/in/logan-scheid-287753137" target="_blank">
+        <img class="shortcut" src="{% static 'images/icons/overlay_shortcut.png' %}">
+        <img src="{% static 'images/icons/linkedin.png' %}">
+        <p>LinkedIn.html</p>
+      </a>
+      <a class="desktop-icon" href="https://medium.com/@scheidlogan" target="_blank">
+        <img class="shortcut" src="{% static 'images/icons/overlay_shortcut.png' %}">
+        <img src="{% static 'images/icons/medium.png' %}">
+        <p>Medium.html</p>
+      </a>
+    </div>
+<div class="block-centered">
+<div class="window" id="welcome">
+    <div class="title-bar" id="intro-title-bar">
+      <img src="/static/images/icons/intro.png"> 
+      <div class="title-bar-text">
+        Welcome
+      </div>
+    </div>
+    <div class="uncloseable-window-body window-body" style="text-align: center;">
+      <p><b>Hey there!</b></p>
+      <p>I'm Logan, a software engineer with a passionate curiosity for all things web development (check out Logan.exe). Finding your way around should feel pretty self-explanatory, may I recommend going into fullscreen ;). Learn about me and my work while taking a trip down memory lane. Oh and be on the lookout for some hidden... things.</p>
+      <p style="margin-bottom: 0;">
+        &nbsp(\_/) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(\_/) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(\_/) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(\_/) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(\_/) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(\_/) 
+      </p>
+      <p style="margin-top: 0; margin-bottom: 0;">
+        &nbsp(0 0) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(0 0) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(0 0) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(0 0) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(0 0) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(0 0) 
+      </p>
+      <p style="margin-top: 0; margin-bottom: 0;">
+        &nbsp(> >) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(v v) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(< <) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(> >) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(v v) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(< <) 
+      </p>
+      <p style="margin-top: 0;">
+        &nbsp&nbspw w &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspw w &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspw w &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspw w &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspw w &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspw w  
+      </p>
+    </div>
+  </div>
+
+<div class="window">
+  <div class="title-bar" id="steam-title-bar">
+    <img src="/static/images/icons/steam.png"> 
+    <div class="title-bar-text">Steam98.exe</div>
+    <div class="title-bar-controls">
+      <button id="steam-help-icon" aria-label="Help" onclick="openDraggableWindow(this)"></button>
+    </div>
+  </div>
+  <div class="uncloseable-window-body window-body">
+    <div id="game-container"class="window">
+    <div id="game-screen">
+      <canvas id="jsdos"><span id="game" class="no-game"></span></canvas>
+  </div>
+    <button disabled class="dosbox-button" onclick="ci.fullscreen()">Make Fullscreen</button>
+    <button disabled class="dosbox-button" onclick="ejectGame()">Eject Game</button> 
+  </div>
+</div>
+  <div class="status-bar">
+    <p class="status-bar-field">Press ? for help</p>
+    <p id="game-title" class="status-bar-field">Pick a game from the Games folder in the Start menu</p>
+    <p class="status-bar-field">CPU Usage: 99%</p>
+  </div>
+</div>
+</div>
+</div>
+{% include "taskbar.html" %}
+<div id='rocket-container'></div>
+</body>
+{% endblock content %}
+
+<head>
+
+</head>
+<body>
+  
+</body>
