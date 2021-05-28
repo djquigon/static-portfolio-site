@@ -1,59 +1,49 @@
-{% load static%}
-
-{%block title%}
-{%endblock title%}
-
 <head>
   <title>Logan Scheid</title>
-  <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
-  {%block content_css%}
+  <link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
   <link rel="stylesheet" href="https://unpkg.com/98.css" >
-  <link rel="stylesheet" href="{% static 'css/windows.css' %}">
-  {%endblock content_css%}
+  <link rel="stylesheet" href="css/windows.css">
 
-  {%block scripts%}
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script type="text/javascript" src="{% static 'js/windows.js' %}"></script>
+  <script type="text/javascript" src="js/windows.js"></script>
   <script type="text/javascript" src="https://js-dos.com/6.22/current/js-dos.js"></script>
-      <script type="text/javascript" src="{% static '/js/three.min.js' %}"></script>
-      <script type="text/javascript" src="{% static '/js/rocket.js' %}" defer></script>
-  {%endblock scripts%}
+      <script type="text/javascript" src="/js/three.min.js"></script>
+      <script type="text/javascript" src="/js/rocket.js" defer></script>
 </head>
 
-{% block content %}
 <body>
   <div class="desktop">
     <div id="desktop-icons">
       <div id="logan-icon" class="desktop-icon" onclick="highlightIcon(this)" ondblclick="openDraggableWindow(this)">
-        <img src="{% static 'images/icons/logan.png' %}">
+        <img src="images/icons/logan.png">
         <p>Logan.exe</p>
       </div>
       <div id="projects-icon" class="desktop-icon" onclick="highlightIcon(this)" ondblclick="openDraggableWindow(this)">
-        <img src="{% static 'images/icons/projects.png' %}">
+        <img src="images/icons/projects.png">
         <p>Projects.exe</p>
       </div>
       <div id="my-resume-icon" class="desktop-icon" onclick="highlightIcon(this)" ondblclick="openDraggableWindow(this)">
-        <img src="{% static 'images/icons/resume.png' %}">
+        <img src="images/icons/resume.png">
         <p>My_Resume.exe</p>
       </div>
       <div id="contact-me-icon" class="desktop-icon" onclick="highlightIcon(this)" ondblclick="openDraggableWindow(this)">
-        <img src="{% static 'images/icons/contactme.png' %}">
+        <img src="images/icons/contactme.png">
         <p>Contact_Me.exe</p>
       </div>
       <a class="desktop-icon" href="https://github.com/djquigon" target="_blank">
-        <img class="shortcut" src="{% static 'images/icons/overlay_shortcut.png' %}">
-        <img src="{% static 'images/icons/github.png' %}">
+        <img class="shortcut" src="images/icons/overlay_shortcut.png">
+        <img src="images/icons/github.png">
         <p>Github.html</p>
       </a>
       <a class="desktop-icon" href="https://www.linkedin.com/in/logan-scheid-287753137" target="_blank">
-        <img class="shortcut" src="{% static 'images/icons/overlay_shortcut.png' %}">
-        <img src="{% static 'images/icons/linkedin.png' %}">
+        <img class="shortcut" src="images/icons/overlay_shortcut.png">
+        <img src="images/icons/linkedin.png">
         <p>LinkedIn.html</p>
       </a>
       <a class="desktop-icon" href="https://medium.com/@scheidlogan" target="_blank">
-        <img class="shortcut" src="{% static 'images/icons/overlay_shortcut.png' %}">
-        <img src="{% static 'images/icons/medium.png' %}">
+        <img class="shortcut" src="images/icons/overlay_shortcut.png">
+        <img src="images/icons/medium.png">
         <p>Medium.html</p>
       </a>
     </div>
@@ -108,14 +98,5 @@
 </div>
 </div>
 </div>
-{% include "taskbar.html" %}
 <div id='rocket-container'></div>
-</body>
-{% endblock content %}
-
-<head>
-
-</head>
-<body>
-  
 </body>
