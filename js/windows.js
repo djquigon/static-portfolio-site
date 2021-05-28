@@ -229,9 +229,9 @@ function openDraggableWindow(windowToOpen){
             "<p><b>Work Interests:</b> Full stack web development but preferably front end work. Would love to do frontend work for any DeFi project utilizing the web3 framework. Would also love to work in game development and currently using Unity to hone my skills in this area in my freetime.</p>" +
             "<p><b>Skills:</b> Experience in java, c++, c#, python, js, html, css, and solidity. More specifically experience within web frameworks such as django and spring.</p>" +
             "<p><b>Personal Interests/Hobbies:</b> Coding, Crypto/DeFi/Web3, watching atlanta sports teams (sadly), grilling, traveling, playing/developing video games</p>" +
-            "<p><b>Favorite Food: 🍕</p>" +
-            "<p><b>Favorite Movie:</b> Star Wars: The Phantom Menace (just kidding...but not really) &nbsp&nbsp<img style='height:30px;'src='images/favicon.ico'></p>" +
-            "<p><b>Favorite Game:</b></p><img style='height:50px;' src='images/chief.gif'>" +
+            "<p><b>Favorite Food:</b> 🍕</p>" +
+            "<p><b>Favorite Movie:</b> Star Wars: The Phantom Menace (just kidding...but not really)</p>" +
+            "<p><b>Favorite Game:</b><img style='height:50px;' src='images/chief.gif'></p>" +
             "</div></div>";
             resizable = false;
             //create program
