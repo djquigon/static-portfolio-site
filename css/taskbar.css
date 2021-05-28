@@ -280,8 +280,7 @@
     font-family: "Pixelated MS Sans Serif", Tahoma;
     font-size: medium;
     padding: 4px;
-    background-image: url("images/icons/98logo1.png");
-    /*background-image: url("images/quicon.png");*/
+    background-image: url("../images/icons/98logo1.png");
     background-size: auto 70%;
     background-position: 5% 50%;
     background-repeat: no-repeat;
@@ -366,6 +365,6 @@
     border-bottom: none;
     border-right: none;
     box-shadow: inset 1px 1px grey;
-    background-image: url("images/opened_pixel.png");
+    background-image: url("../images/opened_pixel.png");
     
   }
