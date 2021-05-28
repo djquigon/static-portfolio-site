@@ -139,7 +139,7 @@ function changeTheme(theme){
       $(".menu-sidebar").removeClass().addClass("menu-sidebar");
       break;
     case "dark":
-      $(".desktop").css("background-color", "rgb(2 18 32)");
+      $(".desktop").css("background-color", "rgb(3 25 43)");
       $(".desktop").css("background-size", "cover");
       $(".startbar").css("background-color", "#7b7979");
       $(".menu").css("background", "#7b7979");
