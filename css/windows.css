@@ -34,7 +34,7 @@ body{
     width: 100vw;
     /*background-color: #d0102675;*/
     background-color: #008080;
-    /*background: url('/static/images/cybercity.gif') no-repeat;*/
+    /*background: url('/images/cybercity.gif') no-repeat;*/
     background-repeat: no-repeat;
     background-position: center;
     overflow: hidden;
@@ -102,7 +102,7 @@ body{
 }
 
 .dosbox-container > .dosbox-overlay { 
-    background: url('/static/images/icons/spinning_quigon.gif') no-repeat;
+    background: url('/images/icons/spinning_quigon.gif') no-repeat;
     background-position: center;
     background-color: black;
 }
@@ -115,7 +115,7 @@ body{
 #game-screen {
     height:480px;
     width: 640px;
-    background: url('/static/images/icons/spinning_quigon.gif') no-repeat;
+    background: url('/images/icons/spinning_quigon.gif') no-repeat;
     background-position: center;
     background-color: black;
 }
@@ -130,7 +130,7 @@ body{
     width: 20%;
     height:20%;
     position:fixed;
-    background: url('/static/images/clippycursed.gif') no-repeat;
+    background: url('/images/clippycursed.gif') no-repeat;
     background-position: center;
     z-index: 999;
 }

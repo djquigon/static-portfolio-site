@@ -25,7 +25,7 @@ function startGame(game){
         cycles: "auto",
         autolock: false,
       }).ready(function (fs, main) {
-        fs.extract("/static/assets/games/" + game + ".zip").then(function () {
+        fs.extract("/assets/games/" + game + ".zip").then(function () {
           main(["-c", "cd " + game, "-c", game + ".EXE"]).then(function (ci) {
             window.ci = ci;
           });
@@ -155,48 +155,48 @@ function changeTheme(theme){
       $(".menu-sidebar").removeClass().addClass("rose-gold-menu-sidebar menu-sidebar");
       break;
     case "clouds":
-      $(".desktop").css("background", "url('/static/images/backgrounds/clouds.jpg') no-repeat");
+      $(".desktop").css("background", "url('/images/backgrounds/clouds.jpg') no-repeat");
       $(".desktop").css("background-size", "cover");
       $(".title-bar").removeClass().addClass("clouds-title-bar title-bar");
       $(".menu-sidebar").removeClass().addClass("clouds-menu-sidebar menu-sidebar");
       break;
     case "cybercity":
-      $(".desktop").css("background", "url('/static/images/backgrounds/cybercity.gif') no-repeat");
+      $(".desktop").css("background", "url('/images/backgrounds/cybercity.gif') no-repeat");
       $(".desktop").css("background-size", "cover");
       $(".startbar").css("background-color", "silver");
       $(".title-bar").removeClass().addClass("cybercity-title-bar title-bar");
       $(".menu-sidebar").removeClass().addClass("cybercity-menu-sidebar menu-sidebar");
       break;
     case "cybernightcity":
-      $(".desktop").css("background", "url('/static/images/backgrounds/cybernightcity.gif') no-repeat");
+      $(".desktop").css("background", "url('/images/backgrounds/cybernightcity.gif') no-repeat");
       $(".desktop").css("background-size", "cover");
       $(".startbar").css("background-color", "silver");
       $(".title-bar").removeClass().addClass("cybernightcity-title-bar title-bar");
       $(".menu-sidebar").removeClass().addClass("cybernightcity-menu-sidebar menu-sidebar");
       break;
     case "galaxy":
-      $(".desktop").css("background", "url('/static/images/backgrounds/galaxy.gif') no-repeat");
+      $(".desktop").css("background", "url('/images/backgrounds/galaxy.gif') no-repeat");
       $(".desktop").css("background-size", "cover");
       $(".startbar").css("background-color", "silver");
       $(".title-bar").removeClass().addClass("galaxy-title-bar title-bar");
       $(".menu-sidebar").removeClass().addClass("galaxy-menu-sidebar menu-sidebar");
       break;
     case "xp":
-      $(".desktop").css("background", "url('/static/images/backgrounds/xp.jpg') no-repeat");
+      $(".desktop").css("background", "url('/images/backgrounds/xp.jpg') no-repeat");
       $(".desktop").css("background-size", "cover");
       $(".startbar").css("background-color", "silver");
       $(".title-bar").removeClass().addClass("xp-title-bar title-bar");
       $(".menu-sidebar").removeClass().addClass("xp-menu-sidebar menu-sidebar");
       break;
     case "doge":
-      $(".desktop").css("background", "url('/static/images/backgrounds/doge.jpg') no-repeat");
+      $(".desktop").css("background", "url('/images/backgrounds/doge.jpg') no-repeat");
       $(".desktop").css("background-size", "cover");
       $(".startbar").css("background-color", "silver");
       $(".title-bar").removeClass().addClass("doge-title-bar title-bar");
       $(".menu-sidebar").removeClass().addClass("doge-menu-sidebar menu-sidebar");
       break;
     case "star-wars":
-      $(".desktop").css("background", "url('/static/images/backgrounds/starwars.gif') no-repeat");
+      $(".desktop").css("background", "url('/images/backgrounds/starwars.gif') no-repeat");
       $(".desktop").css("background-size", "cover");
       $(".startbar").css("background-color", "silver");
       $(".title-bar").removeClass().addClass("star-wars-title-bar title-bar");
@@ -222,16 +222,16 @@ function openDraggableWindow(windowToOpen){
         case "logan-icon":
           if($('#logan').length == 0){
             draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
-            "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/logan_small.png'>" +
+            "<div style='display: flex; align-items: center;'><img src= '/images/icons/logan_small.png'>" +
             "<div class='title-bar-text'>Logan.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='logan'> " + 
-            "<div style='display: flex; justify-content: space-between;'><img style='transform: scaleX(-1);' class='purp' src='/static/images/purp.gif'><h2 style='text-decoration: underline;'>About Me</h2><img class='purp' src='/static/images/purp.gif'></div><p>Born in December 1997, grew up in Atlanta, Georgia. Graduated high school in 2016 and started coding towards the end of my first year of college in 2017 after first learning about Bitcoin (true story). Switched my major to computer science the following year and graduated from the University of Georgia in spring 2021.</p>" + 
+            "<div style='display: flex; justify-content: space-between;'><img style='transform: scaleX(-1);' class='purp' src='/images/purp.gif'><h2 style='text-decoration: underline;'>About Me</h2><img class='purp' src='/images/purp.gif'></div><p>Born in December 1997, grew up in Atlanta, Georgia. Graduated high school in 2016 and started coding towards the end of my first year of college in 2017 after first learning about Bitcoin (true story). Switched my major to computer science the following year and graduated from the University of Georgia in spring 2021.</p>" + 
             "<p><b>Work Interests:</b> Full stack web development but preferably front end work. Would love to do frontend work for any DeFi project utilizing the web3 framework. Would also love to work in game development and currently using Unity to hone my skills in this area in my freetime.</p>" +
             "<p><b>Skills:</b> Experience in java, c++, c#, python, js, html, css, and solidity. More specifically experience within web frameworks such as django and spring.</p>" +
             "<p><b>Personal Interests/Hobbies:</b> Coding (obviously), Crypto/DeFi/Web3, watching atlanta sports teams (sadly), cooking/grilling, traveling, playing/developing video games</p>" +
-            "<p><b>Favorite Food: </b>Pizza <img style='height:25px;'src='/static/images/pizza.gif'></p>" +
-            "<p><b>Favorite Movie:</b> Star Wars: The Phantom Menace (JK...but not really) &nbsp&nbsp<img style='height:30px;'src='/static/images/favicon.ico'></p>" +
-            "<p><b>Favorite Game:</b> If you know, you know... <img style='height:50px;' src='/static/images/chief.gif'></p>" +
+            "<p><b>Favorite Food: </b>Pizza <img style='height:25px;'src='/images/pizza.gif'></p>" +
+            "<p><b>Favorite Movie:</b> Star Wars: The Phantom Menace (JK...but not really) &nbsp&nbsp<img style='height:30px;'src='/images/favicon.ico'></p>" +
+            "<p><b>Favorite Game:</b> If you know, you know... <img style='height:50px;' src='/images/chief.gif'></p>" +
             "</div></div>";
             resizable = false;
             //create program
@@ -243,7 +243,7 @@ function openDraggableWindow(windowToOpen){
               $("#logan-program-container").append($(document.createElement('span'))
                 .addClass("program-clicked program"));
               $("#logan-program-container span").append($(document.createElement('div')));
-              $("#logan-program-container span div").append($(document.createElement('img')).attr({ src: '/static/images/icons/logan_small.png'}));
+              $("#logan-program-container span div").append($(document.createElement('img')).attr({ src: '/images/icons/logan_small.png'}));
               $("#logan-program-container span div").append($(document.createElement('p')).text("Logan.exe"));
               //add event listener dblclick
             }
@@ -252,7 +252,7 @@ function openDraggableWindow(windowToOpen){
         case "projects-icon":
           if($('#projects').length == 0){
             draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
-            "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/projects_small.png'>" +
+            "<div style='display: flex; align-items: center;'><img src= '/images/icons/projects_small.png'>" +
             "<div class='title-bar-text'>Projects.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='projects'> " + 
             "<p>There's so much room for activities!</p> </div></div>";
@@ -266,7 +266,7 @@ function openDraggableWindow(windowToOpen){
               $("#projects-program-container").append($(document.createElement('span'))
                 .addClass("program-clicked program"));
               $("#projects-program-container span").append($(document.createElement('div')));
-              $("#projects-program-container span div").append($(document.createElement('img')).attr({ src: '/static/images/icons/projects_small.png'}));
+              $("#projects-program-container span div").append($(document.createElement('img')).attr({ src: '/images/icons/projects_small.png'}));
               $("#projects-program-container span div").append($(document.createElement('p')).text("Projects.exe"));
               //add event listener dblclick          
             }
@@ -275,10 +275,10 @@ function openDraggableWindow(windowToOpen){
         case "my-resume-icon":
           if($('#my-resume').length == 0){
             draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
-            "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/resume_small.png'>" +
+            "<div style='display: flex; align-items: center;'><img src= '/images/icons/resume_small.png'>" +
             "<div class='title-bar-text'>My_Resume.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='my-resume'> " + 
-            "<p>There's so much room for activities!</p> <a target='_blank'href='/static/assets/documents/scheid_resume.pdf'>PDF</a> </div></div>";
+            "<p>There's so much room for activities!</p> <a target='_blank'href='/assets/documents/scheid_resume.pdf'>PDF</a> </div></div>";
             resizable = false;
             //create program
             if($('#my-resume-program-container').length == 0){
@@ -289,7 +289,7 @@ function openDraggableWindow(windowToOpen){
               $("#my-resume-program-container").append($(document.createElement('span'))
                 .addClass("program-clicked program"));
               $("#my-resume-program-container span").append($(document.createElement('div')));
-              $("#my-resume-program-container span div").append($(document.createElement('img')).attr({ src: '/static/images/icons/resume_small.png'}));
+              $("#my-resume-program-container span div").append($(document.createElement('img')).attr({ src: '/images/icons/resume_small.png'}));
               $("#my-resume-program-container span div").append($(document.createElement('p')).text("My_Resume.exe"));
               //add event listener dblclick          
             }
@@ -298,7 +298,7 @@ function openDraggableWindow(windowToOpen){
         case "contact-me-icon":
           if($('#contact-me').length == 0){
             draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
-            "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/contactme_small.png'>" +
+            "<div style='display: flex; align-items: center;'><img src= '/images/icons/contactme_small.png'>" +
             "<div class='title-bar-text'>Contact_Me.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='contact-me'> " + 
             "<div class='field-row'> <label for='text17'>Email</label> <input id='text17' type='text' /> </div> " +
@@ -317,7 +317,7 @@ function openDraggableWindow(windowToOpen){
               $("#contact-me-program-container").append($(document.createElement('span'))
                 .addClass("program-clicked program"));
               $("#contact-me-program-container span").append($(document.createElement('div')));
-              $("#contact-me-program-container span div").append($(document.createElement('img')).attr({ src: '/static/images/icons/contactme_small.png'}));
+              $("#contact-me-program-container span div").append($(document.createElement('img')).attr({ src: '/images/icons/contactme_small.png'}));
               $("#contact-me-program-container span div").append($(document.createElement('p')).text("Contact_Me.exe"));
               //add event listener dblclick          
             }
@@ -326,7 +326,7 @@ function openDraggableWindow(windowToOpen){
         case "steam-help-icon":
           if($('#steam-help').length == 0){
             draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='width: 400px; z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
-            "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/steam.png'>" +
+            "<div style='display: flex; align-items: center;'><img src= '/images/icons/steam.png'>" +
             "<div class='title-bar-text'>Steam98Help</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='steam-help'> " +  
             "<ul class='tree-view'><li><strong style='color: #55468e'>👾 Steam98 👾</strong></li><li>What is Steam98?<ul><li>Steam98 is my implementation of <a style='text-decoration: underline; color: #7b468e;'href='https://js-dos.com/'>js-dos</a>, a javascript library that allows you to run DOS programs in a browser. Simply pick a game from the Games folder in the start menu and start playing. You can only load one game at a time, but you can exit a game whenever you wish. Below are some various faqs and tips for each game. Contact me if you have any game requests!</li></ul></li><li><details open><summary>Games</summary> " +
@@ -345,7 +345,7 @@ function openDraggableWindow(windowToOpen){
               $("#steam-help-program-container").append($(document.createElement('span'))
                 .addClass("program-clicked program"));
               $("#steam-help-program-container span").append($(document.createElement('div')));
-              $("#steam-help-program-container span div").append($(document.createElement('img')).attr({ src: '/static/images/icons/steam.png'}));
+              $("#steam-help-program-container span div").append($(document.createElement('img')).attr({ src: '/images/icons/steam.png'}));
               $("#steam-help-program-container span div").append($(document.createElement('p')).text("Steam98Help"));
               //add event listener dblclick          
             }
@@ -354,7 +354,7 @@ function openDraggableWindow(windowToOpen){
         case "themes-icon":
           if($('#themes').length == 0){
             draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
-            "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/themes_small.png'>" +
+            "<div style='display: flex; align-items: center;'><img src= '/images/icons/themes_small.png'>" +
             "<div class='title-bar-text'>Themes</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='themes'>" + 
             "<div><div style='display: flex; flex-direction: column;'>" + 
@@ -375,7 +375,7 @@ function openDraggableWindow(windowToOpen){
             "<p><b>XP</b></p>" + 
             "<button font-size='16' size='36' onclick= changeTheme('xp')><span role='img' style='font-size: 30px;'>🌄</span></button>" +
             "<p><b>Doge</b></p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('doge')><span role='img' style='font-size: 30px;'><img style='width:32px; height:40px;'src='/static/images/doge.png'></span></button>" +
+            "<button font-size='16' size='36' onclick= changeTheme('doge')><span role='img' style='font-size: 30px;'><img style='width:32px; height:40px;'src='/images/doge.png'></span></button>" +
             "<p><b>Star Wars</b></p>" + 
             "<button font-size='16' size='36' onclick= changeTheme('star-wars')><span role='img' style='font-size: 30px;'>⭐</span></button>" +
             "</div></div></div></div>";
@@ -389,7 +389,7 @@ function openDraggableWindow(windowToOpen){
               $("#themes-program-container").append($(document.createElement('span'))
                 .addClass("program-clicked program"));
               $("#themes-program-container span").append($(document.createElement('div')));
-              $("#themes-program-container span div").append($(document.createElement('img')).attr({ src: '/static/images/icons/themes_small.png'}));
+              $("#themes-program-container span div").append($(document.createElement('img')).attr({ src: '/images/icons/themes_small.png'}));
               $("#themes-program-container span div").append($(document.createElement('p')).text("Themes"));
               //add event listener dblclick          
             }
@@ -398,14 +398,14 @@ function openDraggableWindow(windowToOpen){
             case "aim-icon":
               if($('#aim').length == 0){
                 draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
-                "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/aim_small.png'>" +
+                "<div style='display: flex; align-items: center;'><img src= '/images/icons/aim_small.png'>" +
                 "<div class='title-bar-text'>Sign On</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
-                "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='aim'> <img src='/static/images/aim_header.jpg'> <hr> " +  
+                "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='aim'> <img src='/images/aim_header.jpg'> <hr> " +  
                 "<div class='field-row'><label for='text17'>Screen Name</label><select> <option>&lt;New User&gt;</option>" +
                 "<option>loganator97</option></select></div>" +
                 "<div class='field-row'> <label for='text17'>Password</label> <input id='text17' disabled type='text' /> </div> " +
                 "<div class='field-row'><input disabled type='checkbox' id='aim-save-password'><label for='aim-save-password' style='margin-right: 16%;'>Save password</label><input disabled type='checkbox' id='aim-auto-login'><label for='aim-auto-login'>Auto-login</label></div>" + 
-                "<div class='field-row' id='aim-button-row'><div style='display: flex;'><div><img src= '/static/images/icons/aim_help.png'><p>Help</p></div><div style='margin-left: 50%;'><img src= '/static/images/icons/aim_setup.png'><p>Setup</p></div></div><div><img src= '/static/images/icons/aim_signon.png'><p><b>Sign On</b></p></div></div>" +
+                "<div class='field-row' id='aim-button-row'><div style='display: flex;'><div><img src= '/images/icons/aim_help.png'><p>Help</p></div><div style='margin-left: 50%;'><img src= '/images/icons/aim_setup.png'><p>Setup</p></div></div><div><img src= '/images/icons/aim_signon.png'><p><b>Sign On</b></p></div></div>" +
                 "<div class='field-row'><p style='margin-top: 0; margin-bottom: 0; margin-left: 30%;'>Version 3.0.1464</div>" +
                 "</div></div>";
                 resizable = false;
@@ -418,7 +418,7 @@ function openDraggableWindow(windowToOpen){
                   $("#aim-program-container").append($(document.createElement('span'))
                     .addClass("program-clicked program"));
                   $("#aim-program-container span").append($(document.createElement('div')));
-                  $("#aim-program-container span div").append($(document.createElement('img')).attr({ src: '/static/images/icons/aim_small.png'}));
+                  $("#aim-program-container span div").append($(document.createElement('img')).attr({ src: '/images/icons/aim_small.png'}));
                   $("#aim-program-container span div").append($(document.createElement('p')).text("AOL Instant Messenger"));
                   //add event listener dblclick          
                 }
@@ -428,7 +428,7 @@ function openDraggableWindow(windowToOpen){
             case "rating-icon":
               if($('#rating').length == 0){
                 draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'><div class='" + theme + "' id='rating-title-bar'>" +
-                "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/rating.png'>" +
+                "<div style='display: flex; align-items: center;'><img src= '/images/icons/rating.png'>" +
                 "<div class='title-bar-text'>Rating</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
                 "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div>" +
                 "<div class='window-body' id='rating'> <p id='rating-text'>Leave a rating!</p> <div class='field-row' id='rating-bar'> <label for='range22'>Rating:</label> <label for='range23'>0</label> <input id='range23' type='range' min='0' max='10' value='5' />" +
@@ -443,7 +443,7 @@ function openDraggableWindow(windowToOpen){
                   $("#rating-program-container").append($(document.createElement('span'))
                     .addClass("program-clicked program"));
                   $("#rating-program-container span").append($(document.createElement('div')));
-                  $("#rating-program-container span div").append($(document.createElement('img')).attr({ src: '/static/images/icons/rating.png'}));
+                  $("#rating-program-container span div").append($(document.createElement('img')).attr({ src: '/images/icons/rating.png'}));
                   $("#rating-program-container span div").append($(document.createElement('p')).text("Rating"));
                   //add event listener dblclick          
                 }
