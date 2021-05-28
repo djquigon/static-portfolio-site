@@ -25,7 +25,7 @@ function startGame(game){
         cycles: "auto",
         autolock: false,
       }).ready(function (fs, main) {
-        fs.extract("/assets/games/" + game + ".zip").then(function () {
+        fs.extract("assets/games/" + game + ".zip").then(function () {
           main(["-c", "cd " + game, "-c", game + ".EXE"]).then(function (ci) {
             window.ci = ci;
           });
@@ -278,7 +278,7 @@ function openDraggableWindow(windowToOpen){
             "<div style='display: flex; align-items: center;'><img src= 'images/icons/resume_small.png'>" +
             "<div class='title-bar-text'>My_Resume.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='my-resume'> " + 
-            "<p>There's so much room for activities!</p> <a target='_blank'href='/assets/documents/scheid_resume.pdf'>PDF</a> </div></div>";
+            "<p>There's so much room for activities!</p> <a target='_blank'href='assets/documents/scheid_resume.pdf'>PDF</a> </div></div>";
             resizable = false;
             //create program
             if($('#my-resume-program-container').length == 0){
