@@ -8,8 +8,13 @@
   <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script type="text/javascript" src="js/windows.js"></script>
   <script type="text/javascript" src="https://js-dos.com/6.22/current/js-dos.js"></script>
-      <script type="text/javascript" src="/js/three.min.js"></script>
-      <script type="text/javascript" src="/js/rocket.js" defer></script>
+  <script type="text/javascript" src="/js/three.min.js"></script>
+  <script type="text/javascript" src="/js/rocket.js" defer></script>
+  <script> 
+    $(function(){
+      $("#taskbar-container").load("taskbar.html"); 
+    });
+  </script> 
 </head>
 
 <body>
@@ -98,5 +103,6 @@
 </div>
 </div>
 </div>
+<div id='taskbar-container'></div>
 <div id='rocket-container'></div>
 </body>
