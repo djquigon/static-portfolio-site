@@ -228,10 +228,10 @@ function openDraggableWindow(windowToOpen){
             "<div style='display: flex; justify-content: space-between;'><img style='transform: scaleX(-1);' class='purp' src='images/purp.gif'><h2 style='text-decoration: underline;'>About Me</h2><img class='purp' src='images/purp.gif'></div><p>Born in December 1997, grew up in Atlanta, Georgia. Graduated high school in 2016 and started coding towards the end of my first year of college in 2017 after first learning about Bitcoin (true story). Switched my major to computer science the following year and graduated from the University of Georgia in spring 2021.</p>" + 
             "<p><b>Work Interests:</b> Full stack web development but preferably front end work. Would love to do frontend work for any DeFi project utilizing the web3 framework. Would also love to work in game development and currently using Unity to hone my skills in this area in my freetime.</p>" +
             "<p><b>Skills:</b> Experience in java, c++, c#, python, js, html, css, and solidity. More specifically experience within web frameworks such as django and spring.</p>" +
-            "<p><b>Personal Interests/Hobbies:</b> Coding (obviously), Crypto/DeFi/Web3, watching atlanta sports teams (sadly), cooking/grilling, traveling, playing/developing video games</p>" +
-            "<p><b>Favorite Food: </b>Pizza <img style='height:25px;'src='images/pizza.gif'></p>" +
-            "<p><b>Favorite Movie:</b> Star Wars: The Phantom Menace (JK...but not really) &nbsp&nbsp<img style='height:30px;'src='images/favicon.ico'></p>" +
-            "<p><b>Favorite Game:</b> If you know, you know... <img style='height:50px;' src='images/chief.gif'></p>" +
+            "<p><b>Personal Interests/Hobbies:</b> Coding, Crypto/DeFi/Web3, watching atlanta sports teams (sadly), grilling, traveling, playing/developing video games</p>" +
+            "<p><b>Favorite Food: 🍕</p>" +
+            "<p><b>Favorite Movie:</b> Star Wars: The Phantom Menace (just kidding...but not really) &nbsp&nbsp<img style='height:30px;'src='images/favicon.ico'></p>" +
+            "<p><b>Favorite Game:</b></p><img style='height:50px;' src='images/chief.gif'>" +
             "</div></div>";
             resizable = false;
             //create program
