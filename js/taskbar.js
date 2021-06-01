@@ -47,21 +47,3 @@ function clippy(){
     animateDiv($('.clippy2'));
     animateDiv($('.clippy3'));
 }
-  
-  $(document).ready(function() {
-    //start up music
-    // toggle start menu 
-    $("#startbutton").click(function() {
-      $("#startbutton").toggleClass("startbutton-on");
-      $('#menu').toggle();
-    });
-  
-    // close start menu if desktop clicked
-    $(".desktop").click(function() {
-      /*alert("hi");*/
-      // Depress windows start button animation 
-      $("#startbutton").removeClass("startbutton-on");
-      // hide start menu 
-      $('#menu').hide();
-    });
-  }); // end document ready
