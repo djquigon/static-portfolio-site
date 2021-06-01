@@ -21,7 +21,6 @@ function startGame(game){
     $("#jsdos").css('display', 'inline-block')
     Dos(document.getElementById("jsdos"), { 
         wdosboxUrl: "https://js-dos.com/6.22/current/wdosbox.js",
-        //maybe max?
         cycles: "auto",
         autolock: false,
       }).ready(function (fs, main) {
@@ -108,10 +107,6 @@ function closeWindow(windowToClose){
     }
 }
 
-function highlightIcon(icon){
-    //$(icon).css({"outline": "50px solid rgb(14 117 199 / 50%)", "outline-offset": "-70px", "overflow": "hidden", "position": "relative"})
-} 
-
 function makeProgramClicked(program){
   program.className = "program-clicked program";
 }
@@ -119,10 +114,6 @@ function makeProgramClicked(program){
 //remove program-clicked for all elements
 function removeProgramClicked(){
   $(".program-clicked").removeClass("program-clicked");
-}
-
-function submitMessage(){
-  // for contact me
 }
 
 function changeTheme(theme){
@@ -212,28 +203,54 @@ function getTheme(){
 
 function openDraggableWindow(windowToOpen){
     // make icon and name blue
-    //getTheme method using steam or intro window
     theme = getTheme();
     window_id = windowToOpen.getAttribute("id");
     highest_z = parseInt(getHighestDraggableZ()) + 1; //get highest z-index and set window to that
-    draggable_window = ""
-    resizable = true;
+
+    wind = $(document.createElement('div')).attr({id: 'draggable-window', onmousedown: 'setZ(this)'}).addClass("window").css("z-index", highest_z);
+    title_bar = $(document.createElement('div')).addClass(theme);
+    title_bar_text_icon = $(document.createElement('div')).css({"display": "flex", "align-items": "center"});
+    title_bar_controls = $(document.createElement('div')).addClass("title-bar-controls");
+    title_bar_minimize = $(document.createElement('button')).attr('aria-label', 'Minimize');
+    title_bar_maximize = $(document.createElement('button')).attr('aria-label', 'Maximize');
+    title_bar_close = $(document.createElement('button')).attr('aria-label', 'Close').attr('onclick', 'closeWindow(this)');
+    title_bar_controls.append([title_bar_minimize,title_bar_maximize,title_bar_close]);
+
     switch (window_id) {
         case "logan-icon":
           if($('#logan').length == 0){
-            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
-            "<div style='display: flex; align-items: center;'><img src= 'images/icons/logan_small.png'>" +
-            "<div class='title-bar-text'>Logan.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
-            "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='logan'> " + 
-            "<div style='display: flex; justify-content: space-between;'><img style='transform: scaleX(-1);' class='purp' src='images/purp.gif'><h2 style='text-decoration: underline;'>About Me</h2><img class='purp' src='images/purp.gif'></div><p>Born in December 1997, grew up in Atlanta, Georgia. Graduated high school in 2016 and started coding towards the end of my first year of college in 2017 after first learning about Bitcoin (true story). Switched my major to computer science the following year and graduated from the University of Georgia in spring 2021.</p>" + 
-            "<p><b>Work Interests:</b> Full stack web development but preferably front end work. Would love to do frontend work for any DeFi project utilizing the web3 framework. Would also love to work in game development and currently using Unity to hone my skills in this area in my freetime.</p>" +
-            "<p><b>Skills:</b> Experience in java, c++, c#, python, js, html, css, and solidity. More specifically experience within web frameworks such as django and spring.</p>" +
-            "<p><b>Personal Interests/Hobbies:</b> Coding, Crypto/DeFi/Web3, watching atlanta sports teams (sadly), grilling, traveling, playing/developing video games</p>" +
-            "<p><b>Favorite Food:</b> 🍕</p>" +
-            "<p><b>Favorite Movie:</b> Star Wars: The Phantom Menace (just kidding...but not really)</p>" +
-            "<p><b>Favorite Game:</b><img style='height:50px;' src='images/chief.gif'></p>" +
-            "</div></div>";
-            resizable = false;
+            icon = $(document.createElement('img')).attr({src: 'images/icons/logan_small.png'});
+            title_text = $(document.createElement('div')).addClass("title-bar-text").text("Logan.exe");
+            title_bar_text_icon.append([icon, title_text]);
+            
+            title_bar.append(title_bar_text_icon, title_bar_controls);
+
+            window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'logan'});
+            
+            header_image1 = $(document.createElement('img')).attr({src: 'images/purp.gif'}).addClass("purp").css({"transform": "scaleX(-1)"});
+            header_text = $(document.createElement('h2')).css({"text-decoration": "underline"}).text("About Me");
+            header_image2 = $(document.createElement('img')).attr({src: 'images/purp.gif'}).addClass("purp");
+            header = $(document.createElement('div')).css({"display": "flex", "justify-content": "space-between"}).append([header_image1, header_text, header_image2]);
+
+            intro = "Born in December 1997, grew up in Atlanta, Georgia. Graduated high school in 2016 and started coding towards the end of my first year of college in 2017 after first learning about Bitcoin. Switched my major to computer science the following year and graduated from the University of Georgia in spring 2021.";
+            work_interests = "Full stack web development but preferably front end work. Would love to do frontend work for any DeFi project utilizing the web3 framework. Would also love to work in game development and currently using Unity to hone my skills in this area in my freetime.";
+            skills = "Experience in java, c++, c#, python, js, html, css, and solidity. More specifically experience within web frameworks such as django and spring."
+            hobbies = "Coding, Crypto/DeFi/Web3, watching atlanta sports teams (sadly), grilling, traveling, playing/developing video games."
+            food = String.fromCodePoint(0x1F355); // pizza emoji
+            movie = " Star Wars: The Phantom Menace (just kidding...but not really)";
+
+
+            window_body.append([
+              header,
+              $(document.createElement('p')).text(intro),
+              $(document.createElement('p')).text(work_interests).prepend($(document.createElement('b')).text("Work Interests:")),
+              $(document.createElement('p')).text(skills).prepend($(document.createElement('b')).text("Skills:")),
+              $(document.createElement('p')).text(hobbies).prepend($(document.createElement('b')).text("Personal Interests/Hobbies:")),
+              $(document.createElement('p')).text(food).prepend($(document.createElement('b')).text("Favorite Food:")),
+              $(document.createElement('p')).text(movie).prepend($(document.createElement('b')).text("Favorite Movie:")),
+              $(document.createElement('p')).append([$(document.createElement('b')).text("Favorite Game:"), $(document.createElement('img')).attr('src', 'images/chief.gif').css('height', '50px')])
+            ]);
+            
             //create program
             if($('#logan-program-container').length == 0){
               removeProgramClicked();
@@ -251,12 +268,17 @@ function openDraggableWindow(windowToOpen){
           break;
         case "projects-icon":
           if($('#projects').length == 0){
-            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
-            "<div style='display: flex; align-items: center;'><img src= 'images/icons/projects_small.png'>" +
-            "<div class='title-bar-text'>Projects.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
-            "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='projects'> " + 
-            "<p>There's so much room for activities!</p> </div></div>";
-            resizable = false;
+            icon = $(document.createElement('img')).attr({src: 'images/icons/projects_small.png'});
+            title_text = $(document.createElement('div')).addClass("title-bar-text").text("Projects.exe");
+            title_bar_text_icon.append([icon, title_text]);
+            
+            title_bar.append(title_bar_text_icon, title_bar_controls);
+
+            window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'projects'});
+
+            //implement here
+            //append to window body
+            
             //create program
             if($('#projects-program-container').length == 0){
               removeProgramClicked();
@@ -274,12 +296,17 @@ function openDraggableWindow(windowToOpen){
           break;
         case "my-resume-icon":
           if($('#my-resume').length == 0){
-            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
-            "<div style='display: flex; align-items: center;'><img src= 'images/icons/resume_small.png'>" +
-            "<div class='title-bar-text'>My_Resume.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
-            "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='my-resume'> " + 
-            "<p>There's so much room for activities!</p> <a target='_blank'href='assets/documents/scheid_resume.pdf'>PDF</a> </div></div>";
-            resizable = false;
+            icon = $(document.createElement('img')).attr({src: 'images/icons/resume_small.png'});
+            title_text = $(document.createElement('div')).addClass("title-bar-text").text("My_Resume.exe");
+            title_bar_text_icon.append([icon, title_text]);
+            
+            title_bar.append(title_bar_text_icon, title_bar_controls);
+
+            window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'my-resume'});
+
+            //implement here
+            //append to window body
+            
             //create program
             if($('#my-resume-program-container').length == 0){
               removeProgramClicked();
@@ -297,17 +324,18 @@ function openDraggableWindow(windowToOpen){
           break;
         case "contact-me-icon":
           if($('#contact-me').length == 0){
-            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
-            "<div style='display: flex; align-items: center;'><img src= 'images/icons/contactme_small.png'>" +
-            "<div class='title-bar-text'>Contact_Me.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
-            "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='contact-me'> " + 
-            "<div class='field-row'> <label for='text17'>Email</label> <input id='text17' type='text' /> </div> " +
-            "<div class='field-row'><label for='text17'>Reason</label><select> <option>Personal</option>" +
-            "<option>Work-related</option> <option>Question</option><option>Other</option></select></div>" +
-            "<div class='field-row-stacked' style='width: 200px'> <label for='text20'>Message</label> <textarea id='text20' rows='8' style='resize: none;'></textarea> </div>" +
-            "<button>Submit</button>" + 
-            "</div></div>";
-            resizable = false;
+            icon = $(document.createElement('img')).attr({src: 'images/icons/contactme_small.png'});
+            title_text = $(document.createElement('div')).addClass("title-bar-text").text("Contact_Me.exe");
+            title_bar_text_icon.append([icon, title_text]);
+            
+            title_bar.append(title_bar_text_icon, title_bar_controls);
+
+            window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'contact-me'});
+
+            //implement here
+            //append to window body
+            
+            
             //create program
             if($('#contact-me-program-container').length == 0){
               removeProgramClicked();
@@ -325,17 +353,18 @@ function openDraggableWindow(windowToOpen){
           break;
         case "steam-help-icon":
           if($('#steam-help').length == 0){
-            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='width: 400px; z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
-            "<div style='display: flex; align-items: center;'><img src= 'images/icons/steam.png'>" +
-            "<div class='title-bar-text'>Steam98Help</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
-            "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='steam-help'> " +  
-            "<ul class='tree-view'><li><strong style='color: #55468e'>👾 Steam98 👾</strong></li><li>What is Steam98?<ul><li>Steam98 is my implementation of <a style='text-decoration: underline; color: #7b468e;'href='https://js-dos.com/'>js-dos</a>, a javascript library that allows you to run DOS programs in a browser. Simply pick a game from the Games folder in the start menu and start playing. You can only load one game at a time, but you can exit a game whenever you wish. Below are some various faqs and tips for each game. Contact me if you have any game requests!</li></ul></li><li><details open><summary>Games</summary> " +
-            "<ul><li><details><summary>Solitaire</summary><ul><li>Release Date:</li><li>Genre:</li><li>Description:</li></ul></ul>" +
-            "<ul><li><details><summary>Ms. Pacman</summary><ul><li>Release Date:</li><li>Genre:</li><li>Description:</li></ul></ul>" +
-            "<ul><li><details><summary>DOOM</summary><ul><li>Release Date:</li><li>Genre:</li><li>Description:</li></ul>" +
-            "</details></li></ul></details></li></ul>" +
-            "</div></div>";
-            resizable = false;
+            icon = $(document.createElement('img')).attr({src: 'images/icons/steam.png'});
+            title_text = $(document.createElement('div')).addClass("title-bar-text").text("Steam98.exe");
+            title_bar_text_icon.append([icon, title_text]);
+            
+            title_bar.append(title_bar_text_icon, title_bar_controls);
+
+            window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'steam-help'});
+
+            //implement here
+            //append to window body
+            
+            
             //create program
             if($('#steam-help-program-container').length == 0){
               removeProgramClicked();
@@ -353,33 +382,18 @@ function openDraggableWindow(windowToOpen){
           break;
         case "themes-icon":
           if($('#themes').length == 0){
-            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
-            "<div style='display: flex; align-items: center;'><img src= 'images/icons/themes_small.png'>" +
-            "<div class='title-bar-text'>Themes</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
-            "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='themes'>" + 
-            "<div><div style='display: flex; flex-direction: column;'>" + 
-            "<p><b>Light</b></p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('light')><span role='img' style='font-size: 30px;'>🌞</span></button>" + 
-            "<p><b>Dark</b></p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('dark')><span role='img' style='font-size: 30px;'>🌚</span></button>" + 
-            "<p><b>Rose-Gold</b></p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('rose-gold')><span role='img' style='font-size: 30px;'>🌹</span></button>" + 
-            "<p><b>Clouds</b></p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('clouds')><span role='img' style='font-size: 30px;'>☁️</span></button>" + 
-            "<p><b>Cybercity</b></p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('cybercity')><span role='img' style='font-size: 30px;'>🌆</span></button>" + 
-            "<p><b>Cybernightcity</b></p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('cybernightcity')><span role='img' style='font-size: 30px;'>🌃</span></button>" + 
-            "<p><b>Galaxy</b></p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('galaxy')><span role='img' style='font-size: 30px;'>🌌</span></button>" +
-            "<p><b>XP</b></p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('xp')><span role='img' style='font-size: 30px;'>🌄</span></button>" +
-            "<p><b>Doge</b></p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('doge')><span role='img' style='font-size: 30px;'><img style='width:32px; height:40px;'src='images/doge.png'></span></button>" +
-            "<p><b>Star Wars</b></p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('star-wars')><span role='img' style='font-size: 30px;'>⭐</span></button>" +
-            "</div></div></div></div>";
-            resizable = false;
+            icon = $(document.createElement('img')).attr({src: 'images/icons/themes_small.png'});
+            title_text = $(document.createElement('div')).addClass("title-bar-text").text("Themes.exe");
+            title_bar_text_icon.append([icon, title_text]);
+            
+            title_bar.append(title_bar_text_icon, title_bar_controls);
+
+            window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'themes'});
+
+            //implement here
+            //append to window body
+            
+            
             //create program
             if($('#themes-program-container').length == 0){
               removeProgramClicked();
@@ -395,20 +409,20 @@ function openDraggableWindow(windowToOpen){
             }
           }
           break;
-            case "aim-icon":
+        case "aim-icon":
               if($('#aim').length == 0){
-                draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
-                "<div style='display: flex; align-items: center;'><img src= 'images/icons/aim_small.png'>" +
-                "<div class='title-bar-text'>Sign On</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
-                "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='aim'> <img src='images/aim_header.jpg'> <hr> " +  
-                "<div class='field-row'><label for='text17'>Screen Name</label><select> <option>&lt;New User&gt;</option>" +
-                "<option>loganator97</option></select></div>" +
-                "<div class='field-row'> <label for='text17'>Password</label> <input id='text17' disabled type='text' /> </div> " +
-                "<div class='field-row'><input disabled type='checkbox' id='aim-save-password'><label for='aim-save-password' style='margin-right: 16%;'>Save password</label><input disabled type='checkbox' id='aim-auto-login'><label for='aim-auto-login'>Auto-login</label></div>" + 
-                "<div class='field-row' id='aim-button-row'><div style='display: flex;'><div><img src= 'images/icons/aim_help.png'><p>Help</p></div><div style='margin-left: 50%;'><img src= 'images/icons/aim_setup.png'><p>Setup</p></div></div><div><img src= 'images/icons/aim_signon.png'><p><b>Sign On</b></p></div></div>" +
-                "<div class='field-row'><p style='margin-top: 0; margin-bottom: 0; margin-left: 30%;'>Version 3.0.1464</div>" +
-                "</div></div>";
-                resizable = false;
+                icon = $(document.createElement('img')).attr({src: 'images/icons/aim_small.png'});
+                title_text = $(document.createElement('div')).addClass("title-bar-text").text("Sign On");
+                title_bar_text_icon.append([icon, title_text]);
+                
+                title_bar.append(title_bar_text_icon, title_bar_controls);
+    
+                window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'aim'});
+    
+                //implement here
+                //append to window body
+                
+                
                 //create program
                 if($('#aim-program-container').length == 0){
                   removeProgramClicked();
@@ -424,16 +438,20 @@ function openDraggableWindow(windowToOpen){
                 }
               }
               break;  
-                  
-            case "rating-icon":
+        case "rating-icon":
               if($('#rating').length == 0){
-                draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'><div class='" + theme + "' id='rating-title-bar'>" +
-                "<div style='display: flex; align-items: center;'><img src= 'images/icons/rating.png'>" +
-                "<div class='title-bar-text'>Rating</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
-                "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div>" +
-                "<div class='window-body' id='rating'> <p id='rating-text'>Leave a rating!</p> <div class='field-row' id='rating-bar'> <label for='range22'>Rating:</label> <label for='range23'>0</label> <input id='range23' type='range' min='0' max='10' value='5' />" +
-                "<label for='range24'>10</label> </div> <button id='submit-rating' onclick='submitRating()'>Submit Rating</button> </div></div>";
-                resizable = false;
+                icon = $(document.createElement('img')).attr({src: 'images/icons/rating.png'});
+                title_text = $(document.createElement('div')).addClass("title-bar-text").text("Rating");
+                title_bar_text_icon.append([icon, title_text]);
+                
+                title_bar.append(title_bar_text_icon, title_bar_controls);
+    
+                window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'rating'});
+    
+                //implement here
+                //append to window body
+                
+                
                 //create program
                 if($('#rating-program-container').length == 0){
                   removeProgramClicked();
@@ -447,16 +465,12 @@ function openDraggableWindow(windowToOpen){
                   $("#rating-program-container span div").append($(document.createElement('p')).text("Rating"));
                   //add event listener dblclick          
                 }
-              }
-              resizable = false;
+              }       
               break;
       }
-    if(draggable_window != ""){
-      $(".desktop").prepend(draggable_window);
-      //append program to star-program-container
-      $( "#draggable-window" ).draggable();
-      if(resizable){
-        $( "#draggable-window" ).resizable();
-      }
-    }
+    //use win below
+    wind.append([title_bar, window_body]);
+    //wind.draggable();
+    $(".desktop").append(wind);
+    $( "#draggable-window" ).draggable();
 }
