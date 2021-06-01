@@ -252,18 +252,9 @@ function openDraggableWindow(windowToOpen){
             ]);
             
             //create program
-            if($('#logan-program-container').length == 0){
-              removeProgramClicked();
-              $("#start-program-container").append($(document.createElement('div'))
-                .attr({ id: 'logan-program-container' })
-                .addClass("program-container"));
-              $("#logan-program-container").append($(document.createElement('span'))
-                .addClass("program-clicked program"));
-              $("#logan-program-container span").append($(document.createElement('div')));
-              $("#logan-program-container span div").append($(document.createElement('img')).attr({ src: 'images/icons/logan_small.png'}));
-              $("#logan-program-container span div").append($(document.createElement('p')).text("Logan.exe"));
-              //add event listener dblclick
-            }
+            program = "logan"
+            program_text = "Logan.exe";
+
           }
           break;
         case "projects-icon":
@@ -280,23 +271,13 @@ function openDraggableWindow(windowToOpen){
             //append to window body
             
             //create program
-            if($('#projects-program-container').length == 0){
-              removeProgramClicked();
-              $("#start-program-container").append($(document.createElement('div'))
-                .attr({ id: 'projects-program-container' })
-                .addClass("program-container"));
-              $("#projects-program-container").append($(document.createElement('span'))
-                .addClass("program-clicked program"));
-              $("#projects-program-container span").append($(document.createElement('div')));
-              $("#projects-program-container span div").append($(document.createElement('img')).attr({ src: 'images/icons/projects_small.png'}));
-              $("#projects-program-container span div").append($(document.createElement('p')).text("Projects.exe"));
-              //add event listener dblclick          
-            }
+            program = "projects";
+            program_text = "Projects.exe";
           }
           break;
         case "my-resume-icon":
           if($('#my-resume').length == 0){
-            icon = $(document.createElement('img')).attr({src: 'images/icons/resume_small.png'});
+            icon = $(document.createElement('img')).attr({src: 'images/icons/my-resume_small.png'});
             title_text = $(document.createElement('div')).addClass("title-bar-text").text("My_Resume.exe");
             title_bar_text_icon.append([icon, title_text]);
             
@@ -308,23 +289,13 @@ function openDraggableWindow(windowToOpen){
             //append to window body
             
             //create program
-            if($('#my-resume-program-container').length == 0){
-              removeProgramClicked();
-              $("#start-program-container").append($(document.createElement('div'))
-                .attr({ id: 'my-resume-program-container' })
-                .addClass("program-container"));
-              $("#my-resume-program-container").append($(document.createElement('span'))
-                .addClass("program-clicked program"));
-              $("#my-resume-program-container span").append($(document.createElement('div')));
-              $("#my-resume-program-container span div").append($(document.createElement('img')).attr({ src: 'images/icons/resume_small.png'}));
-              $("#my-resume-program-container span div").append($(document.createElement('p')).text("My_Resume.exe"));
-              //add event listener dblclick          
-            }
+            program = "my-resume";
+            program_text = "My_Resume.exe";
           }
           break;
         case "contact-me-icon":
           if($('#contact-me').length == 0){
-            icon = $(document.createElement('img')).attr({src: 'images/icons/contactme_small.png'});
+            icon = $(document.createElement('img')).attr({src: 'images/icons/contact-me_small.png'});
             title_text = $(document.createElement('div')).addClass("title-bar-text").text("Contact_Me.exe");
             title_bar_text_icon.append([icon, title_text]);
             
@@ -337,23 +308,13 @@ function openDraggableWindow(windowToOpen){
             
             
             //create program
-            if($('#contact-me-program-container').length == 0){
-              removeProgramClicked();
-              $("#start-program-container").append($(document.createElement('div'))
-                .attr({ id: 'contact-me-program-container' })
-                .addClass("program-container"));
-              $("#contact-me-program-container").append($(document.createElement('span'))
-                .addClass("program-clicked program"));
-              $("#contact-me-program-container span").append($(document.createElement('div')));
-              $("#contact-me-program-container span div").append($(document.createElement('img')).attr({ src: 'images/icons/contactme_small.png'}));
-              $("#contact-me-program-container span div").append($(document.createElement('p')).text("Contact_Me.exe"));
-              //add event listener dblclick          
-            }
+            program = "contact-me";
+            program_text = "Contact_Me.exe";
           }
           break;
         case "steam-help-icon":
           if($('#steam-help').length == 0){
-            icon = $(document.createElement('img')).attr({src: 'images/icons/steam.png'});
+            icon = $(document.createElement('img')).attr({src: 'images/icons/steam-help_small.png'});
             title_text = $(document.createElement('div')).addClass("title-bar-text").text("Steam98.exe");
             title_bar_text_icon.append([icon, title_text]);
             
@@ -366,18 +327,8 @@ function openDraggableWindow(windowToOpen){
             
             
             //create program
-            if($('#steam-help-program-container').length == 0){
-              removeProgramClicked();
-              $("#start-program-container").append($(document.createElement('div'))
-                .attr({ id: 'steam-help-program-container' })
-                .addClass("program-container"));
-              $("#steam-help-program-container").append($(document.createElement('span'))
-                .addClass("program-clicked program"));
-              $("#steam-help-program-container span").append($(document.createElement('div')));
-              $("#steam-help-program-container span div").append($(document.createElement('img')).attr({ src: 'images/icons/steam.png'}));
-              $("#steam-help-program-container span div").append($(document.createElement('p')).text("Steam98Help"));
-              //add event listener dblclick          
-            }
+            program = "steam-help";
+            program_text = "Steam98Help";
           }
           break;
         case "themes-icon":
@@ -395,82 +346,62 @@ function openDraggableWindow(windowToOpen){
             
             
             //create program
-            if($('#themes-program-container').length == 0){
-              removeProgramClicked();
-              $("#start-program-container").append($(document.createElement('div'))
-                .attr({ id: 'themes-program-container' })
-                .addClass("program-container"));
-              $("#themes-program-container").append($(document.createElement('span'))
-                .addClass("program-clicked program"));
-              $("#themes-program-container span").append($(document.createElement('div')));
-              $("#themes-program-container span div").append($(document.createElement('img')).attr({ src: 'images/icons/themes_small.png'}));
-              $("#themes-program-container span div").append($(document.createElement('p')).text("Themes"));
-              //add event listener dblclick          
-            }
+            program = "themes";
+            program_text = "Themes";
           }
           break;
         case "aim-icon":
-              if($('#aim').length == 0){
-                icon = $(document.createElement('img')).attr({src: 'images/icons/aim_small.png'});
-                title_text = $(document.createElement('div')).addClass("title-bar-text").text("Sign On");
-                title_bar_text_icon.append([icon, title_text]);
-                
-                title_bar.append(title_bar_text_icon, title_bar_controls);
-    
-                window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'aim'});
-    
-                //implement here
-                //append to window body
-                
-                
-                //create program
-                if($('#aim-program-container').length == 0){
-                  removeProgramClicked();
-                  $("#start-program-container").append($(document.createElement('div'))
-                    .attr({ id: 'aim-program-container' })
-                    .addClass("program-container"));
-                  $("#aim-program-container").append($(document.createElement('span'))
-                    .addClass("program-clicked program"));
-                  $("#aim-program-container span").append($(document.createElement('div')));
-                  $("#aim-program-container span div").append($(document.createElement('img')).attr({ src: 'images/icons/aim_small.png'}));
-                  $("#aim-program-container span div").append($(document.createElement('p')).text("AOL Instant Messenger"));
-                  //add event listener dblclick          
-                }
-              }
-              break;  
+          if($('#aim').length == 0){
+            icon = $(document.createElement('img')).attr({src: 'images/icons/aim_small.png'});
+            title_text = $(document.createElement('div')).addClass("title-bar-text").text("Sign On");
+            title_bar_text_icon.append([icon, title_text]);
+            
+            title_bar.append(title_bar_text_icon, title_bar_controls);
+
+            window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'aim'});
+
+            //implement here
+            //append to window body
+            
+            
+            //create program
+            program = "aim";
+            program_text = "AOL Instant Messenger";
+          }
+          break;  
         case "rating-icon":
-              if($('#rating').length == 0){
-                icon = $(document.createElement('img')).attr({src: 'images/icons/rating.png'});
-                title_text = $(document.createElement('div')).addClass("title-bar-text").text("Rating");
-                title_bar_text_icon.append([icon, title_text]);
-                
-                title_bar.append(title_bar_text_icon, title_bar_controls);
-    
-                window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'rating'});
-    
-                //implement here
-                //append to window body
-                
-                
-                //create program
-                if($('#rating-program-container').length == 0){
-                  removeProgramClicked();
-                  $("#start-program-container").append($(document.createElement('div'))
-                    .attr({ id: 'rating-program-container' })
-                    .addClass("program-container"));
-                  $("#rating-program-container").append($(document.createElement('span'))
-                    .addClass("program-clicked program"));
-                  $("#rating-program-container span").append($(document.createElement('div')));
-                  $("#rating-program-container span div").append($(document.createElement('img')).attr({ src: 'images/icons/rating.png'}));
-                  $("#rating-program-container span div").append($(document.createElement('p')).text("Rating"));
-                  //add event listener dblclick          
-                }
-              }       
-              break;
-      }
-    //use win below
+          if($('#rating').length == 0){
+            icon = $(document.createElement('img')).attr({src: 'images/icons/rating.png'});
+            title_text = $(document.createElement('div')).addClass("title-bar-text").text("Rating");
+            title_bar_text_icon.append([icon, title_text]);
+            
+            title_bar.append(title_bar_text_icon, title_bar_controls);
+
+            window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'rating'});
+
+            //implement here
+            //append to window body
+            
+            
+            //create program
+            program = "rating";
+            program_text = "Rating";
+          }       
+          break;
+    }
+
+    if($('#' + program + '-program-container').length == 0){
+      removeProgramClicked();
+      $("#start-program-container").append($(document.createElement('div'))
+        .attr({ id: program + '-program-container' })
+        .addClass("program-container"));
+      $('#' + program + '-program-container').append($(document.createElement('span'))
+        .addClass("program-clicked program"));
+      $('#' + program + '-program-container span').append($(document.createElement('div')));
+      $('#' + program + '-program-container span div').append($(document.createElement('img')).attr({ src: 'images/icons/' + program + '_small.png'}));
+      $('#' + program + '-program-container span div').append($(document.createElement('p')).text(program_text));
+    }
     wind.append([title_bar, window_body]);
     wind.draggable();
     $(".desktop").append(wind);
-    //$( "#draggable-window" ).draggable();
 }
