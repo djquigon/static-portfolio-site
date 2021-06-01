@@ -185,6 +185,8 @@ body{
     width: 640px;*/
     top: 25%;
     left: 25%;
+    width: max-content;
+    height: max-content;
 }
 
 #rocket-container{

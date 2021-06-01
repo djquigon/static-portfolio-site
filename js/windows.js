@@ -470,7 +470,7 @@ function openDraggableWindow(windowToOpen){
       }
     //use win below
     wind.append([title_bar, window_body]);
-    //wind.draggable();
+    wind.draggable();
     $(".desktop").append(wind);
-    $( "#draggable-window" ).draggable();
+    //$( "#draggable-window" ).draggable();
 }
