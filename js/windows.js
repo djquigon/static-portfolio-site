@@ -464,8 +464,58 @@ function openDraggableWindow(windowToOpen){
             window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'aim'});
 
             //implement here
+            aim_header = $(document.createElement('img')).attr("src", "images/aim_header.jpg");
+            hr = $(document.createElement('hr'));
+
+            field_row1 = $(document.createElement('div')).addClass("field-row");
+            label1 = $(document.createElement('label')).attr("for", "text17").text("Screen Name");
+            select1 = $(document.createElement('select')).append([
+              $(document.createElement('option')).text("<New User>"),
+              $(document.createElement('option')).text("loganator97")
+            ]);
+            field_row1.append([label1, select1]);
+
+            field_row2 = $(document.createElement('div')).addClass("field-row");
+            label2 = $(document.createElement('label')).attr("for", "text17").text("Password");
+            input1 = $(document.createElement('input')).attr({id: "text17", type: "text", disabled: "True"});
+            field_row2.append([label2, input1]);
+
+            field_row3 = $(document.createElement('div')).addClass("field-row").append([
+              $(document.createElement('input')).attr({disabled: "True", type: "checkbox", id: "aim-save-password"}),
+              $(document.createElement('label')).attr("for", "aim-save-password").css("margin-right", "16%").text("Save password"),
+              $(document.createElement('input')).attr({disabled: "True", type: "checkbox", id: "aim-auto-login"}),
+              $(document.createElement('label')).attr("for", "aim-auto-login").text("Auto-login"),
+            ]);
+
+            field_row4 = $(document.createElement('div')).addClass("field-row").attr("id", "aim-button-row").append([
+              $(document.createElement('div')).css("display", "flex").append([
+                $(document.createElement('div')).append([
+                  $(document.createElement('img')).attr("src", "images/icons/aim_help.png"),
+                  $(document.createElement('p')).text("Help")
+                ]),
+                $(document.createElement('div')).css("margin-left", "50%").append([
+                  $(document.createElement('img')).attr("src", "images/icons/aim_setup.png"),
+                  $(document.createElement('p')).text("Setup")
+                ]),
+              ]),
+              $(document.createElement('div')).append([
+                $(document.createElement('img')).attr("src", "images/icons/aim_signon.png"),
+                $(document.createElement('p')).append($(document.createElement('b')).text("Sign On"))
+              ])
+            ]);
+
+            field_row5 = $(document.createElement('div')).addClass("field-row").append([
+              $(document.createElement('p')).css({"margin-top": "0", "margin-bottom": "0", "margin-left": "30%"}).text("Version 3.0.1464")
+            ]);
             //append to window body
             window_body.append([
+              aim_header,
+              hr,
+              field_row1,
+              field_row2,
+              field_row3,
+              field_row4,
+              field_row5
             ]);
             
             //create program
@@ -475,7 +525,7 @@ function openDraggableWindow(windowToOpen){
           break;  
         case "rating-icon":
           if($('#rating').length == 0){
-            icon = $(document.createElement('img')).attr({src: 'images/icons/rating.png'});
+            icon = $(document.createElement('img')).attr({src: 'images/icons/rating_small.png'});
             title_text = $(document.createElement('div')).addClass("title-bar-text").text("Rating");
             title_bar_text_icon.append([icon, title_text]);
             
@@ -484,8 +534,20 @@ function openDraggableWindow(windowToOpen){
             window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'rating'});
 
             //implement here
+            rating_text = $(document.createElement('p')).attr("id", "rating-text").text("Leave a rating!");
+            field_row1 = $(document.createElement('div')).addClass("field-row").attr("id", "rating-bar").append([
+              $(document.createElement('label')).attr("for", "range22").text("Rating:"),
+              $(document.createElement('label')).attr("for", "range23").text("0"),
+              $(document.createElement('input')).attr({id: "range23", type: "range", min: "0", max: "10", value: "5"}),
+              $(document.createElement('label')).attr("for", "range24").text("10")
+            ]);
+            submit_button = $(document.createElement('button')).attr({id: "submit-rating", onclick: "submitRating()"}).text("Submit Rating");
+
             //append to window body
             window_body.append([
+              rating_text,
+              field_row1,
+              submit_button
             ]);
             
             //create program
@@ -506,6 +568,8 @@ function openDraggableWindow(windowToOpen){
       $('#' + program + '-program-container span div').append($(document.createElement('img')).attr({ src: 'images/icons/' + program + '_small.png'}));
       $('#' + program + '-program-container span div').append($(document.createElement('p')).text(program_text));
     }
+    //icon
+    //refeactor to add more here
     wind.append([title_bar, window_body]);
     wind.draggable();
     $(".desktop").append(wind);
