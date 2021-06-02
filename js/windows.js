@@ -359,44 +359,44 @@ function openDraggableWindow(windowToOpen){
             item1 = $(document.createElement('li')).append($(document.createElement('strong')).css("color", '#55468e').text('👾 Steam98 👾'));
             steam98_text = "Steam98 is my implementation of js-dos, a javascript library that allows you to run DOS programs in a browser. Simply " + 
             "pick a game from the Games folder in the start menu and start playing. You can only load one game at a time, but you can exit a game whenever " + 
-            "you wish. Below are some various faqs and tips for each game. Contact me if you have any game requests!";
+            "you wish. Below are links to all the games with information about them. Contact me if you have any game requests!";
             item2 = $(document.createElement('li')).text("What is Steam98?").append(
               $(document.createElement('ul')).append($(document.createElement('li')).text(steam98_text))
             );
             item3 = $(document.createElement('li')).append($(document.createElement('details')).attr({open: "True"}).append($(document.createElement('summary')).text("Games")));
             item4 = $(document.createElement('ul')).append([
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Solitaire").attr({href: "https://dosgames.com/game/solitaire-suite/"}).css({"text-decoration": "underline"})              
+                $(document.createElement('a')).text("Solitaire").attr({target: '_blank',href: "https://dosgames.com/game/solitaire-suite/"}).css({"text-decoration": "underline"})              
               ),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Ms. Pacman").attr({href: "https://dosgames.com/game/ms-pacman-pc"}).css({"text-decoration": "underline"})                
+                $(document.createElement('a')).text("Ms. Pacman").attr({target: '_blank',href: "https://dosgames.com/game/ms-pacman-pc"}).css({"text-decoration": "underline"})                
               ),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("DOOM").attr({href: "https://dosgames.com/game/doom"}).css({"text-decoration": "underline"})                
+                $(document.createElement('a')).text("DOOM").attr({target: '_blank',href: "https://dosgames.com/game/doom"}).css({"text-decoration": "underline"})                
               ),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Duke Nukem 3D").attr({href: "https://dosgames.com/game/duke-nukem-3d"}).css({"text-decoration": "underline"})                
+                $(document.createElement('a')).text("Duke Nukem 3D").attr({target: '_blank',href: "https://dosgames.com/game/duke-nukem-3d"}).css({"text-decoration": "underline"})                
               ),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Wolfenstein 3D").attr({href: "https://dosgames.com/game/wolfenstein-3d"}).css({"text-decoration": "underline"})                
+                $(document.createElement('a')).text("Wolfenstein 3D").attr({target: '_blank',href: "https://dosgames.com/game/wolfenstein-3d"}).css({"text-decoration": "underline"})                
               ),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Mario").attr({href: "https://dosgames.com/game/mario-and-luigi"}).css({"text-decoration": "underline"})                
+                $(document.createElement('a')).text("Mario").attr({target: '_blank',href: "https://dosgames.com/game/mario-and-luigi"}).css({"text-decoration": "underline"})                
               ),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Mortal Kombat 3").attr({href: "https://dosgames.com/game/mortal-kombat-3"}).css({"text-decoration": "underline"})                
+                $(document.createElement('a')).text("Mortal Kombat 3").attr({target: '_blank',href: "https://dosgames.com/game/mortal-kombat-3"}).css({"text-decoration": "underline"})                
               ),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Star Wars: Dark Forces").attr({href: "https://dosgames.com/game/star-wars-dark-forces/"}).css({"text-decoration": "underline"})                
+                $(document.createElement('a')).text("Star Wars: Dark Forces").attr({target: '_blank',href: "https://dosgames.com/game/star-wars-dark-forces/"}).css({"text-decoration": "underline"})                
               ),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Systemshock").attr({href: "https://dosgames.com/game/system-shock"}).css({"text-decoration": "underline"})                
+                $(document.createElement('a')).text("Systemshock").attr({target: '_blank',href: "https://dosgames.com/game/system-shock"}).css({"text-decoration": "underline"})                
               ),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Street Fighter 2 Turbo").attr({href: "https://dosgames.com/game/super-street-fighter-ii-turbo"}).css({"text-decoration": "underline"})                
+                $(document.createElement('a')).text("Street Fighter 2 Turbo").attr({target: '_blank',href: "https://dosgames.com/game/super-street-fighter-ii-turbo"}).css({"text-decoration": "underline"})                
               ),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Acid Tetris").attr({href: "https://dosgames.com/game/acid-tetris"}).css({"text-decoration": "underline"})                
+                $(document.createElement('a')).text("Acid Tetris").attr({target: '_blank',href: "https://dosgames.com/game/acid-tetris"}).css({"text-decoration": "underline"})                
               ),
             ]);
             //implement here
