@@ -269,7 +269,9 @@ function openDraggableWindow(windowToOpen){
 
             //implement here
             //append to window body
-            
+            window_body.append([
+            ]);
+
             //create program
             program = "projects";
             program_text = "Projects.exe";
@@ -287,6 +289,9 @@ function openDraggableWindow(windowToOpen){
 
             //implement here
             //append to window body
+            window_body.append([
+              $(document.createElement('p')).append($(document.createElement('a')).attr({target: '_blank', href: 'assets/documents/scheid_resume.pdf'}).text("PDF"))
+            ]);
             
             //create program
             program = "my-resume";
@@ -304,8 +309,29 @@ function openDraggableWindow(windowToOpen){
             window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'contact-me'});
 
             //implement here
+            field_row1 = $(document.createElement('div')).addClass("field-row");
+            label1 = $(document.createElement('label')).attr({for: "text17"}).text("Email");
+            input1 = $(document.createElement('input')).attr({id: "text17", type: "text"});
+            field_row1.append([label1, input1]);
+
+            field_row2 = $(document.createElement('div')).addClass("field-row");
+            label2 = $(document.createElement('label')).attr({for: "text17"}).text("Reason");
+            select = $(document.createElement('select'));
+            option1 = $(document.createElement('option')).text("Personal");
+            option2 = $(document.createElement('option')).text("Work-related");
+            option3 = $(document.createElement('option')).text("Question");
+            option4 = $(document.createElement('option')).text("Other");
+            select.append([option1, option2, option3, option4]);
+            field_row2.append([label2, select]);
+
+            field_row3 = $(document.createElement('div')).addClass("field-row-stacked").css("width", "200px");
+            label3 = $(document.createElement('label')).attr({for: "text20"}).text("Message");
+            text_area = $(document.createElement('textarea')).attr({id: "text20", rows: "8",}).css("resize", "none");
+            field_row3.append([label3, text_area]);
+
+            submit_button = $(document.createElement('button')).text("Submit")
             //append to window body
-            
+            window_body.append([field_row1, field_row2, field_row3, submit_button]);
             
             //create program
             program = "contact-me";
@@ -322,9 +348,61 @@ function openDraggableWindow(windowToOpen){
 
             window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'steam-help'});
 
+            tree = $(document.createElement('ul')).addClass("tree-view").css("width", "400px");
+            item1 = $(document.createElement('li')).append($(document.createElement('strong')).css("color", '#55468e').text('👾 Steam98 👾'));
+            steam98_text = "Steam98 is my implementation of js-dos, a javascript library that allows you to run DOS programs in a browser. Simply " + 
+            "pick a game from the Games folder in the start menu and start playing. You can only load one game at a time, but you can exit a game whenever " + 
+            "you wish. Below are some various faqs and tips for each game. Contact me if you have any game requests!";
+            item2 = $(document.createElement('li')).text("What is Steam98?").append(
+              $(document.createElement('ul')).append($(document.createElement('li')).text(steam98_text))
+            );
+            item3 = $(document.createElement('li')).append($(document.createElement('details')).attr({open: "True"}).append($(document.createElement('summary')).text("Games")));
+            item4 = $(document.createElement('ul')).append([
+              $(document.createElement('li')).append(
+                $(document.createElement('a')).text("Solitaire").attr({href: "https://dosgames.com/game/solitaire-suite/"}).css({"text-decoration": "underline"})              
+              ),
+              $(document.createElement('li')).append(
+                $(document.createElement('a')).text("Ms. Pacman").attr({href: "https://dosgames.com/game/ms-pacman-pc"}).css({"text-decoration": "underline"})                
+              ),
+              $(document.createElement('li')).append(
+                $(document.createElement('a')).text("DOOM").attr({href: "https://dosgames.com/game/doom"}).css({"text-decoration": "underline"})                
+              ),
+              $(document.createElement('li')).append(
+                $(document.createElement('a')).text("Duke Nukem 3D").attr({href: "https://dosgames.com/game/duke-nukem-3d"}).css({"text-decoration": "underline"})                
+              ),
+              $(document.createElement('li')).append(
+                $(document.createElement('a')).text("Wolfenstein 3D").attr({href: "https://dosgames.com/game/wolfenstein-3d"}).css({"text-decoration": "underline"})                
+              ),
+              $(document.createElement('li')).append(
+                $(document.createElement('a')).text("Mario").attr({href: "https://dosgames.com/game/mario-and-luigi"}).css({"text-decoration": "underline"})                
+              ),
+              $(document.createElement('li')).append(
+                $(document.createElement('a')).text("Mortal Kombat 3").attr({href: "https://dosgames.com/game/mortal-kombat-3"}).css({"text-decoration": "underline"})                
+              ),
+              $(document.createElement('li')).append(
+                $(document.createElement('a')).text("Star Wars: Dark Forces").attr({href: "https://dosgames.com/game/star-wars-dark-forces/"}).css({"text-decoration": "underline"})                
+              ),
+              $(document.createElement('li')).append(
+                $(document.createElement('a')).text("Systemshock").attr({href: "https://dosgames.com/game/system-shock"}).css({"text-decoration": "underline"})                
+              ),
+              $(document.createElement('li')).append(
+                $(document.createElement('a')).text("Street Fighter 2 Turbo").attr({href: "https://dosgames.com/game/super-street-fighter-ii-turbo"}).css({"text-decoration": "underline"})                
+              ),
+              $(document.createElement('li')).append(
+                $(document.createElement('a')).text("Acid Tetris").attr({href: "https://dosgames.com/game/acid-tetris"}).css({"text-decoration": "underline"})                
+              ),
+            ]);
             //implement here
             //append to window body
-            
+            tree.append([
+              item1,
+              item2,
+              item3,
+              item4
+            ]);
+            window_body.append([
+              tree,
+            ]);
             
             //create program
             program = "steam-help";
@@ -342,8 +420,33 @@ function openDraggableWindow(windowToOpen){
             window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'themes'});
 
             //implement here
+            theme_container = $(document.createElement('div')).css({"display": "flex", "flex-direction": "column"});
+            theme_container.append([
+              $(document.createElement('p')).append($(document.createElement('b')).text("Light")),
+              $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onlick: "changeTheme('light')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("🌞")),
+              $(document.createElement('p')).append($(document.createElement('b')).text("Light")),
+              $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onlick: "changeTheme('dark')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("🌚")),
+              $(document.createElement('p')).append($(document.createElement('b')).text("Light")),
+              $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onlick: "changeTheme('rose-gold')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("🌹")),
+              $(document.createElement('p')).append($(document.createElement('b')).text("Light")),
+              $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onlick: "changeTheme('clouds')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("☁️")),
+              $(document.createElement('p')).append($(document.createElement('b')).text("Light")),
+              $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onlick: "changeTheme('cybercity')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("🌆")),
+              $(document.createElement('p')).append($(document.createElement('b')).text("Light")),
+              $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onlick: "changeTheme('cybernightcity')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("🌃")),
+              $(document.createElement('p')).append($(document.createElement('b')).text("Light")),
+              $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onlick: "changeTheme('galaxy')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("🌌")),
+              $(document.createElement('p')).append($(document.createElement('b')).text("Light")),
+              $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onlick: "changeTheme('xp')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("🌄")),
+              $(document.createElement('p')).append($(document.createElement('b')).text("Light")),
+              $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onlick: "changeTheme('doge')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").append($(document.createElement('img')).attr("src", "images/doge.png").css({"width": "32px", "height": "40px"}))),
+              $(document.createElement('p')).append($(document.createElement('b')).text("Light")),
+              $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onlick: "changeTheme('star-wars')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("⭐")),
+            ]);
             //append to window body
-            
+            window_body.append([
+              theme_container
+            ]);
             
             //create program
             program = "themes";
@@ -362,7 +465,8 @@ function openDraggableWindow(windowToOpen){
 
             //implement here
             //append to window body
-            
+            window_body.append([
+            ]);
             
             //create program
             program = "aim";
@@ -381,7 +485,8 @@ function openDraggableWindow(windowToOpen){
 
             //implement here
             //append to window body
-            
+            window_body.append([
+            ]);
             
             //create program
             program = "rating";
