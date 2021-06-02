@@ -46,7 +46,6 @@ function exitFlight(){
 }
 
 function startFlight(){
-  //////////////////////////////////////////////////////////take as note of how to refactor
     $('#rocket-container').css("display", "block")
     $('#rocket-container').append("<button>Press to exit flight</button>");
     $('#rocket-container button').css({"color": "red", "background-color": "black", "left": "45vw", "bottom": "10px"})
@@ -207,7 +206,7 @@ function openDraggableWindow(windowToOpen){
     window_id = windowToOpen.getAttribute("id");
     highest_z = parseInt(getHighestDraggableZ()) + 1; //get highest z-index and set window to that
 
-    wind = $(document.createElement('div')).attr({id: 'draggable-window', onmousedown: 'setZ(this)'}).addClass("window").css("z-index", highest_z);
+    wind = $(document.createElement('div')).attr({id: 'draggable-window', onmousedown: 'setZ(this)'}).addClass("window").css("z-index", highest_z).css("position", "absolute");
     title_bar = $(document.createElement('div')).addClass(theme);
     title_bar_text_icon = $(document.createElement('div')).css({"display": "flex", "align-items": "center"});
     title_bar_controls = $(document.createElement('div')).addClass("title-bar-controls");
@@ -250,7 +249,9 @@ function openDraggableWindow(windowToOpen){
               $(document.createElement('p')).text(movie).prepend($(document.createElement('b')).text("Favorite Movie:")),
               $(document.createElement('p')).append([$(document.createElement('b')).text("Favorite Game:"), $(document.createElement('img')).attr('src', 'images/chief.gif').css('height', '50px')])
             ]);
-            
+            wind.append([title_bar, window_body]);
+            wind.draggable();
+            $(".desktop").append(wind);
             //create program
             program = "logan"
             program_text = "Logan.exe";
@@ -271,7 +272,9 @@ function openDraggableWindow(windowToOpen){
             //append to window body
             window_body.append([
             ]);
-
+            wind.append([title_bar, window_body]);
+            wind.draggable();
+            $(".desktop").append(wind);
             //create program
             program = "projects";
             program_text = "Projects.exe";
@@ -292,7 +295,9 @@ function openDraggableWindow(windowToOpen){
             window_body.append([
               $(document.createElement('p')).append($(document.createElement('a')).attr({target: '_blank', href: 'assets/documents/scheid_resume.pdf'}).text("PDF"))
             ]);
-            
+            wind.append([title_bar, window_body]);
+            wind.draggable();
+            $(".desktop").append(wind);
             //create program
             program = "my-resume";
             program_text = "My_Resume.exe";
@@ -332,7 +337,9 @@ function openDraggableWindow(windowToOpen){
             submit_button = $(document.createElement('button')).text("Submit")
             //append to window body
             window_body.append([field_row1, field_row2, field_row3, submit_button]);
-            
+            wind.append([title_bar, window_body]);
+            wind.draggable();
+            $(".desktop").append(wind);
             //create program
             program = "contact-me";
             program_text = "Contact_Me.exe";
@@ -403,7 +410,9 @@ function openDraggableWindow(windowToOpen){
             window_body.append([
               tree,
             ]);
-            
+            wind.append([title_bar, window_body]);
+            wind.draggable();
+            $(".desktop").append(wind);
             //create program
             program = "steam-help";
             program_text = "Steam98Help";
@@ -447,7 +456,9 @@ function openDraggableWindow(windowToOpen){
             window_body.append([
               theme_container
             ]);
-            
+            wind.append([title_bar, window_body]);
+            wind.draggable();
+            $(".desktop").append(wind);
             //create program
             program = "themes";
             program_text = "Themes";
@@ -517,7 +528,9 @@ function openDraggableWindow(windowToOpen){
               field_row4,
               field_row5
             ]);
-            
+            wind.append([title_bar, window_body]);
+            wind.draggable();
+            $(".desktop").append(wind);
             //create program
             program = "aim";
             program_text = "AOL Instant Messenger";
@@ -549,7 +562,9 @@ function openDraggableWindow(windowToOpen){
               field_row1,
               submit_button
             ]);
-            
+            wind.append([title_bar, window_body]);
+            wind.draggable();
+            $(".desktop").append(wind);
             //create program
             program = "rating";
             program_text = "Rating";
@@ -568,9 +583,5 @@ function openDraggableWindow(windowToOpen){
       $('#' + program + '-program-container span div').append($(document.createElement('img')).attr({ src: 'images/icons/' + program + '_small.png'}));
       $('#' + program + '-program-container span div').append($(document.createElement('p')).text(program_text));
     }
-    //icon
     //refeactor to add more here
-    wind.append([title_bar, window_body]);
-    wind.draggable();
-    $(".desktop").append(wind);
 }

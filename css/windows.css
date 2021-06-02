@@ -178,13 +178,13 @@ body{
 }
 
 #draggable-window{
-    position: absolute;
+    /*position: absolute;*/
     z-index: 11;
     text-align: left;
     /*height: 480px;
     width: 640px;*/
-    top: 25%;
-    left: 25%;
+    top: 15%;
+    left: 15%;
     width: max-content;
     height: max-content;
 }
