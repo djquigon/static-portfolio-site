@@ -207,6 +207,7 @@ function openDraggableWindow(windowToOpen){
     highest_z = parseInt(getHighestDraggableZ()) + 1; //get highest z-index and set window to that
 
     wind = $(document.createElement('div')).attr({id: 'draggable-window', onmousedown: 'setZ(this)'}).addClass("window").css("z-index", highest_z).css("position", "absolute");
+    
     title_bar = $(document.createElement('div')).addClass(theme);
     title_bar_text_icon = $(document.createElement('div')).css({"display": "flex", "align-items": "center"});
     title_bar_controls = $(document.createElement('div')).addClass("title-bar-controls");
@@ -214,7 +215,6 @@ function openDraggableWindow(windowToOpen){
     title_bar_maximize = $(document.createElement('button')).attr('aria-label', 'Maximize');
     title_bar_close = $(document.createElement('button')).attr('aria-label', 'Close').attr('onclick', 'closeWindow(this)');
     title_bar_controls.append([title_bar_minimize,title_bar_maximize,title_bar_close]);
-
     switch (window_id) {
         case "logan-icon":
           if($('#logan').length == 0){
@@ -343,6 +343,43 @@ function openDraggableWindow(windowToOpen){
             //create program
             program = "contact-me";
             program_text = "Contact_Me.exe";
+          }
+          break;
+        case "steam-icon":
+          if($('#steam').length == 0){
+            icon = $(document.createElement('img')).attr({src: 'images/icons/steam_small.png'});
+            title_text = $(document.createElement('div')).addClass("title-bar-text").text("Steam98.exe");
+            title_bar_text_icon.append([icon, title_text]);
+
+            title_help = $(document.createElement('button')).attr('aria-label', 'Help').attr({onclick: 'openDraggableWindow(this)', id : 'steam-help-icon'});
+            title_bar_controls.prepend(title_help);
+            
+            title_bar.append(title_bar_text_icon, title_bar_controls);
+
+            window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'steam'}).css("text-align", "center");
+
+            //implement here
+            game_container = $(document.createElement('div')).attr("id", "game-container").addClass("window");
+            screen = $(document.createElement('div')).attr("id", "game-screen");
+            game = $(document.createElement('canvas')).attr("id", "jsdos").append($(document.createElement('span')).attr("id", "game").addClass("no-game"));
+            screen.append(game);
+            button_full = $(document.createElement('button')).addClass("dosbox-button").attr({disabled: "True", onclick: "ci.fullscreen()"}).text("Make Fullscreen");
+            button_eject = $(document.createElement('button')).addClass("dosbox-button").attr({disabled: "True", onclick: "ejectGame()"}).text("Eject Game");
+            game_container.append([screen, button_full, button_eject]);
+
+            //append to window body
+            window_body.append(game_container);
+            status_bar = $(document.createElement('div')).addClass("status-bar").append([
+              $(document.createElement('p')).addClass("status-bar-field").text("Press ? for Help"),
+              $(document.createElement('p')).attr("id", "game-title").addClass("status-bar-field").text("Pick a game from the Games folder in the Start menu"),
+              $(document.createElement('p')).addClass("status-bar-field").text("CPU Usage: 99%"),
+            ]);
+            wind.append([title_bar, window_body, status_bar]);
+            wind.draggable();
+            $(".desktop").append(wind);
+            //create program
+            program = "steam";
+            program_text = "Steam98";
           }
           break;
         case "steam-help-icon":
