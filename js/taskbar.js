@@ -58,7 +58,6 @@ $(document).ready(function() {
 
   // close start menu if desktop clicked
   $(".desktop").click(function() {
-    /*alert("hi");*/
     // Depress windows start button animation 
     $("#startbutton").removeClass("startbutton-on");
     // hide start menu 

@@ -10,7 +10,7 @@ function ejectGame(){
 
 function startGame(game){
     if($('#game').hasClass('no-game') == false){
-        alert("You need to eject the current game before you can start another one.");
+        alert("⚠️ Either Steam98 isn't started, or you need to eject the current game before you can start another one. Please try again.");
         return;
     }
     $("#game").attr("class", game);
