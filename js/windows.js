@@ -607,6 +607,31 @@ function openDraggableWindow(windowToOpen){
             program_text = "Rating";
           }       
           break;
+        case "tenacious_icon":
+          alert("here");
+          if($('#tenacious').length == 0){
+            icon = $(document.createElement('img')).attr({src: 'images/icons/wm_small.png'});
+            title_text = $(document.createElement('div')).addClass("title-bar-text").text("tenacious.mp4");
+            title_bar_text_icon.append([icon, title_text]);
+            
+            title_bar.append(title_bar_text_icon, title_bar_controls);
+
+            window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'tenacious'});
+
+            //implement here
+            video = $(document.createElement('iframe')).css({width: "560", height: "315"}).attr("src", "https://www.youtube.com/embed/_lK4cX5xGiQ")
+            //append to window body
+            window_body.append([
+              video
+            ]);
+            wind.append([title_bar, window_body]);
+            wind.draggable();
+            $(".desktop").append(wind);
+            //create program
+            program = "wm-tenacious";
+            program_text = "tenacious.mp4";
+          }
+          break;
     }
 
     if($('#' + program + '-program-container').length == 0){
@@ -617,7 +642,12 @@ function openDraggableWindow(windowToOpen){
       $('#' + program + '-program-container').append($(document.createElement('span'))
         .addClass("program-clicked program"));
       $('#' + program + '-program-container span').append($(document.createElement('div')));
-      $('#' + program + '-program-container span div').append($(document.createElement('img')).attr({ src: 'images/icons/' + program + '_small.png'}));
+      //for windows media files
+      if(program.includes("wm-")){
+        $('#' + program + '-program-container span div').append($(document.createElement('img')).attr({ src: 'images/icons/wm_small.png'}));
+      }else{
+        $('#' + program + '-program-container span div').append($(document.createElement('img')).attr({ src: 'images/icons/' + program + '_small.png'}));
+      }
       $('#' + program + '-program-container span div').append($(document.createElement('p')).text(program_text));
     }
     //refeactor to add more here
