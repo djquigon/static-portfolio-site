@@ -232,9 +232,9 @@ function openDraggableWindow(windowToOpen){
             header = $(document.createElement('div')).css({"display": "flex", "justify-content": "space-between"}).append([header_image1, header_text, header_image2]);
 
             intro = "Born in December 1997, grew up in Atlanta, Georgia. Graduated high school in 2016 and started coding towards the end of my first year of college in 2017 after first learning about Bitcoin. Switched my major to computer science the following year and graduated from the University of Georgia in spring 2021.";
-            work_interests = "Full stack web development but preferably front end work. Would love to do frontend work for any DeFi project utilizing the web3 framework. Would also love to work in game development and currently using Unity to hone my skills in this area in my freetime.";
-            skills = "Experience in java, c++, c#, python, js, html, css, and solidity. More specifically experience within web frameworks such as django and spring."
-            hobbies = "Coding, Crypto/DeFi/Web3, watching atlanta sports teams (sadly), grilling, traveling, playing/developing video games."
+            work_interests = "Full stack web development but preferably front end work. Working in game development eventually is also a goal of mine.";
+            skills = "Strong experience in python, ranging from web developement using web frameworks such as django, to data mining using various libraries such as pandas, numpy, scikit, and tensorflow. Strong experience with javascript where I've utilized various javascript libraries such as node.js, react, jquery, and three.js. And of course with all this in mind, I'm also very familiar with html, and css. Minor experience in java, c++, and c# from schooling and small personal projects, pretty familiar with java's spring web framework."
+            hobbies = "Coding, researching Crypto/DeFi/Web3, watching Atlanta sports teams, grilling, traveling, playing/modding/developing video games."
             food = String.fromCodePoint(0x1F355); // pizza emoji
             movie = " Star Wars: The Phantom Menace (just kidding...but not really)";
 
