@@ -106,10 +106,6 @@ function closeWindow(windowToClose){
     }
 }
 
-function makeProgramClicked(program){
-  program.className = "program-clicked program";
-}
-
 //remove program-clicked for all elements
 function removeProgramClicked(){
   $(".program-clicked").removeClass("program-clicked");
@@ -233,7 +229,7 @@ function openDraggableWindow(windowToOpen){
 
             intro = "Born in December 1997, grew up in Atlanta, Georgia. Graduated high school in 2016 and started coding towards the end of my first year of college in 2017 after first learning about Bitcoin. Switched my major to computer science the following year and graduated from the University of Georgia in spring 2021.";
             work_interests = "Full stack web development but preferably front end work. Working in game development eventually is also a goal of mine.";
-            skills = "Strong experience in python, ranging from web developement using frameworks such as django, to data mining using various libraries such as pandas, numpy, scikit, and tensorflow. Strong experience with javascript where I've utilized various javascript libraries such as node.js, react, jquery, and three.js. And of course with all this in mind, I'm also very familiar with html, and css. Minor experience in java, c++, and c# from schooling and small personal projects, pretty familiar with java's spring web framework."
+            skills = "Strong experience in python, ranging from web developement using frameworks such as django, to data mining using various libraries such as pandas, numpy, scikit, and tensorflow. Strong experience with javascript where I've utilized various libraries such as node.js, react, jquery, and three.js. And of course with all this in mind, I'm also very familiar with html, and css. Minor experience in java, c++, and c# from schooling and small personal projects, pretty familiar with java's spring web framework."
             hobbies = "Coding, researching Crypto/DeFi/Web3, watching Atlanta sports teams, grilling, traveling, playing/modding/developing video games."
             food = String.fromCodePoint(0x1F355); // pizza emoji
             movie = " Star Wars: The Phantom Menace (just kidding...but not really)";
@@ -615,7 +611,7 @@ function openDraggableWindow(windowToOpen){
             
             title_bar.append(title_bar_text_icon, title_bar_controls);
 
-            window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'tenacious'});
+            window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'wm-tenacious'});
 
             //implement here
             video = $(document.createElement('iframe')).css({width: "560", height: "315"}).attr("src", "https://www.youtube.com/embed/_lK4cX5xGiQ")
