@@ -17,8 +17,7 @@ body{
 #welcome{
     margin-left: 10vw;
     margin-right: 10vw;
-    height: 125px;
-    width: 365.5px;
+    width: 420px;
 }
 
 #rating-bar{
@@ -65,10 +64,6 @@ body{
 .window{
     margin-top: 3vh;
     box-shadow: 5px 5px 20px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
-}
-
-.uncloseable-window-body {
-    text-align: center;
 }
 
 #dosbox *{
