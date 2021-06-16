@@ -627,6 +627,30 @@ function openDraggableWindow(windowToOpen){
             program_text = "tenacious.mp4";
           }
           break;
+          case "nft_icon":
+            if($('#nft').length == 0){
+              icon = $(document.createElement('img')).attr({src: 'images/icons/wm_small.png'});
+              title_text = $(document.createElement('div')).addClass("title-bar-text").text("nft.mp4");
+              title_bar_text_icon.append([icon, title_text]);
+              
+              title_bar.append(title_bar_text_icon, title_bar_controls);
+  
+              window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'wm-nft'});
+  
+              //implement here
+              video = $(document.createElement('iframe')).css({width: "560", height: "315"}).attr("src", "https://www.youtube.com/embed/yY4WK9XDFKg")
+              //append to window body
+              window_body.append([
+                video
+              ]);
+              wind.append([title_bar, window_body]);
+              wind.draggable();
+              $(".desktop").append(wind);
+              //create program
+              program = "wm-nft";
+              program_text = "nft.mp4";
+            }
+            break;
     }
 
     if($('#' + program + '-program-container').length == 0){
