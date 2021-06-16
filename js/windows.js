@@ -614,7 +614,7 @@ function openDraggableWindow(windowToOpen){
             window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'wm-tenacious'});
 
             //implement here
-            video = $(document.createElement('iframe')).css({width: "560", height: "315"}).attr("src", "https://www.youtube.com/embed/_lK4cX5xGiQ")
+            video = $(document.createElement('iframe')).css({width: "560", height: "315"}).attr({src: "https://www.youtube.com/embed/_lK4cX5xGiQ", allow: "fullscreen"});
             //append to window body
             window_body.append([
               video
@@ -638,7 +638,7 @@ function openDraggableWindow(windowToOpen){
               window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'wm-nft'});
   
               //implement here
-              video = $(document.createElement('iframe')).css({width: "560", height: "315"}).attr("src", "https://www.youtube.com/embed/yY4WK9XDFKg")
+              video = $(document.createElement('iframe')).css({width: "560", height: "315"}).attr({src: "https://www.youtube.com/embed/yY4WK9XDFKg", allow: "fullscreen"});
               //append to window body
               window_body.append([
                 video
