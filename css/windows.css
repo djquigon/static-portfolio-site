@@ -226,4 +226,11 @@ body{
     width: 460px;
   }
 
+  #recycle-container{
+    right: 0px;
+    width: 120px;
+    position: absolute;
+    top: 90%;
+  }
+
   
