@@ -62,5 +62,9 @@ $(document).ready(function() {
     $("#startbutton").removeClass("startbutton-on");
     // hide start menu 
     $('#menu').hide();
+    // remove icon overlay
+    //$("#desktop-icons div").removeClass("icon-overlay");
+    //alert("here");
+    //$("#recycle-container div").removeClass("icon-overlay");
   });
 }); // end document ready

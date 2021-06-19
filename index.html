@@ -60,205 +60,205 @@
       </a>
     </div>
     <div id="recycle-container">
-      <div id="recycle-icon" class="desktop-icon" ondblclick="openDraggableWindow(this)">
-        <img src="images/icons/recycle.png">
-        <p>Recycle Bin</p>
+      <div id="recycle-icon" class="desktop-icon" onclick="highlightIcon(this)" ondblclick="openDraggableWindow(this)">
+        <div><img src="images/icons/recycle.png"></div>
+        <div><p>Recycle Bin</p></div>
       </div>
     </div>
-<div class="block-centered">
-<div class="window" id="welcome">
-    <div class="title-bar" id="intro-title-bar">
-      <img src="images/icons/intro.png"> 
-      <div class="title-bar-text">
-        Welcome
-      </div>
-    </div>
-    <div class="window-body">
-      <div style="display: flex;">
-        <img class='icon' src="images/icons/intro_large.png" style="height: 32px; width: 32px;">
-        <div style="margin-left: 20px;">
-          <p><b>Hey there!</b></p>
-          <p>I'm Logan, a software engineer with a passionate curiosity for all things web development. Finding your way around should feel pretty self-explanatory, I recommend going into fullscreen ;). Learn about me and my work while taking a trip down memory lane. Be on the lookout for some hidden... things.</p>
+  <div class="block-centered">
+    <div class="window" id="welcome">
+        <div class="title-bar" id="intro-title-bar">
+          <img src="images/icons/intro.png"> 
+          <div class="title-bar-text">
+            Welcome
+          </div>
         </div>
-      </div>
-      <button style="margin-left: 45%;" onClick="document.getElementById('welcome').style.display='none'">OK</button>
+        <div class="window-body">
+          <div style="display: flex;">
+            <img class='icon' src="images/icons/intro_large.png" style="height: 32px; width: 32px;">
+            <div style="margin-left: 20px;">
+              <p><b>Hey there!</b></p>
+              <p>I'm Logan, a software engineer with a passionate curiosity for all things web development. Finding your way around should feel pretty self-explanatory, I recommend going into fullscreen ;). Learn about me and my work while taking a trip down memory lane. Be on the lookout for some hidden... things.</p>
+            </div>
+          </div>
+          <button style="margin-left: 45%;" onClick="document.getElementById('welcome').style.display='none'">OK</button>
 
-    </div>
-  </div>
-</div>
-</div>
-<div id='taskbar-container'>
-  <div class='taskbar'>
-    <div class="startbar">
-      <div id='start-program-container'>
-        <div id="startbutton" class="startbutton-off">
-          <b>Start</b>
         </div>
       </div>
-      <div class="time">
-          <img class='icon' id='rating-icon' src="images/icons/rating_small.png" onclick="openDraggableWindow(this)">
-          <img class='icon' id='clippy-icon' src="images/icons/warning.png" onclick="clippy()">
-          <img class='icon' id='sun-icon' src="images/icons/sun.png">
-          <img class='icon' id='timedate-icon' src="images/icons/timedate.png">
-          <img class='icon' id='volume-icon' src="images/icons/volume.png">
-          <p>??:?? AM</p>
-      </div>
     </div>
-    <div class="menu" id = "menu">
-      <div class="menu-sidebar">
-        <div class="headline">
-          <strong>Windows</strong> 98
+    </div>
+    <div id='taskbar-container'>
+      <div class='taskbar'>
+        <div class="startbar">
+          <div id='start-program-container'>
+            <div id="startbutton" class="startbutton-off">
+              <b>Start</b>
+            </div>
+          </div>
+          <div class="time">
+              <img class='icon' id='rating-icon' src="images/icons/rating_small.png" onclick="openDraggableWindow(this)">
+              <img class='icon' id='clippy-icon' src="images/icons/warning.png" onclick="clippy()">
+              <img class='icon' id='sun-icon' src="images/icons/sun.png">
+              <img class='icon' id='timedate-icon' src="images/icons/timedate.png">
+              <img class='icon' id='volume-icon' src="images/icons/volume.png">
+              <p>??:?? AM</p>
+          </div>
+        </div>
+        <div class="menu" id = "menu">
+          <div class="menu-sidebar">
+            <div class="headline">
+              <strong>Windows</strong> 98
+            </div>
+          </div>
+          <ul class='menu-content'>
+            <li class='item folder'>
+              <img class='icon' src="images/icons/programs.gif">
+              <em>P</em>rograms
+              <ul class='menu-content'>
+                <li class="item">
+                  <img class='icon' src="images/icons/ie.png">
+                    Internet Explorer
+                </li>
+                <li class="item">
+                  <img class='icon' src="images/icons/msn.png">
+                    MSN
+                </li>
+                <li class="item">
+                  <img class='icon' src="images/icons/msword.png">
+                    Microsoft Word
+                </li>
+                <li class="item">
+                    <img class='icon' src="images/icons/mspp.png">
+                    Microsoft Powerpoint
+                </li>
+                <li class="item">
+                    <img class='icon' src="images/icons/mspaint.png">
+                    Microsoft Paint
+                </li>
+                <li class="item" id="aim-icon" onclick="openDraggableWindow(this)">
+                  <img class='icon' src="images/icons/aim.png">
+                    AIM
+                </li>
+                <li class="item" id="steam-icon" onclick="openDraggableWindow(this)">
+                  <img class='icon' src="images/icons/steam_small.png">
+                    Steam98
+                </li>
+                <li class="item" id="rocket" onclick="startFlight()">
+                  <img class='icon' src="images/icons/rocket.png">
+                    ?????????????
+                </li>
+              </ul>
+            </li>
+            <li class='item folder'>
+              <img class='icon' src="images/icons/msdos.png">
+              G<em>a</em>mes
+              <ul class='menu-content'>
+                <li class="item" onclick="startGame('SOLSUITE');">
+                  <img class='icon' src="images/icons/game_icons/solitaire.png">
+                  Solitaire
+                </li>
+                <li class="item" onclick="startGame('MSPAC');">
+                  <img class='icon' src="images/icons/game_icons/mspacman.png">
+                  Ms. Pac-man
+                </li>
+                <li class="item" onclick="startGame('DOOM');">
+                  <img class='icon' src="images/icons/game_icons/doom.png">
+                  DOOM
+                </li>
+                <li class="item" onclick="startGame('DUKE3D');">
+                  <img class='icon' src="images/icons/game_icons/duke3d.png">
+                  Duke Nukem 3D
+                </li>
+                <li class="item" onclick="startGame('WOLF3D');">
+                  <img class='icon' src="images/icons/game_icons/wolf3d.png">
+                  Wolfenstein 3D
+                </li>
+                <li class="item" onclick="startGame('MARIO');">
+                  <img class='icon' src="images/icons/game_icons/mario.ico">
+                  Mario
+                </li>
+                <li class="item" onclick="startGame('MK3');">
+                  <img class='icon' src="images/icons/game_icons/mk3.png">
+                  Mortal Kombat 3
+                </li>
+                <li class="item" onclick="startGame('DF');">
+                  <img class='icon' src="images/icons/game_icons/darkforces.png">
+                  Star Wars: Darkforces
+                </li>
+                <li class="item" onclick="startGame('SSHOCK');">
+                  <img class='icon' src="images/icons/game_icons/systemshock.png">
+                  Systemshock
+                </li>
+                <li class="item" onclick="startGame('SF2TURBO');">
+                  <img class='icon' src="images/icons/game_icons/streetfighter2t.png">
+                  Street Fighter 2 Turbo
+                </li>
+                <li class="item" onclick="startGame('SABA');">
+                  <img class='icon' src="images/icons/game_icons/tetris.png">
+                  Acid Tetris
+                </li>
+              </ul>
+            </li>
+            <li class='item folder'>
+              <img class='icon' src="images/icons/documents.gif">
+              <em>D</em>ocuments
+              <ul class='menu-content'>
+                <li class="item">
+                  <img class='icon' src="images/icons/txt.gif">
+                  favbands.txt
+                </li>
+                <li class="item">
+                  <img class='icon' src="images/icons/txt.gif">
+                  passwords.txt
+                </li>
+                <li class="item">
+                  <img class='icon' src="images/icons/txt.gif">
+                  asdfzmtihlsjfhwi.txt
+                </li>
+                <li class="item" id = "tenacious_icon" onclick="openDraggableWindow(this)">
+                  <img class='icon' src="images/icons/mp4.png">
+                  tenacious.mp4
+                </li>
+                <li class="item" id = "nft_icon" onclick="openDraggableWindow(this)">
+                  <img class='icon' src="images/icons/mp4.png">
+                  nft.mp4
+                </li>
+              </ul>
+            </li>
+            <li class='item folder'>
+              <img class='icon' src="images/icons/settings.gif">
+              <em>S</em>ettings
+              <ul class='menu-content'>
+                <li class="item" id = "themes-icon" onclick="openDraggableWindow(this)">
+                  <img class='icon' src="images/icons/themes.png">
+                    Themes
+                </li>
+              </ul>
+            </li>
+            <li class='item folder'>
+              <img class='icon' src="images/icons/find.gif">
+              <em>F</em>ind
+            </li>
+            <li class='item'>
+              <img class='icon' src="images/icons/help.gif">
+              <em>H</em>elp
+            </li>
+            <li class='item'>
+              <img class='icon' src="images/icons/run.gif">
+              <em>R</em>un...
+            </li>
+            <li class='divider'></li>
+            <li class='item'>
+              <img class='icon' src="images/icons/logoff.gif">
+              <em>L</em>og Off Win98...
+            </li>
+            <li class='item'>
+              <img class='icon' src="images/icons/shutdown.gif">
+              Sh<em>u</em>t Down...
+            </li>
+          </ul>
         </div>
       </div>
-      <ul class='menu-content'>
-        <li class='item folder'>
-          <img class='icon' src="images/icons/programs.gif">
-          <em>P</em>rograms
-          <ul class='menu-content'>
-            <li class="item">
-              <img class='icon' src="images/icons/ie.png">
-                Internet Explorer
-            </li>
-            <li class="item">
-              <img class='icon' src="images/icons/msn.png">
-                MSN
-            </li>
-            <li class="item">
-              <img class='icon' src="images/icons/msword.png">
-                Microsoft Word
-            </li>
-            <li class="item">
-                <img class='icon' src="images/icons/mspp.png">
-                Microsoft Powerpoint
-            </li>
-            <li class="item">
-                <img class='icon' src="images/icons/mspaint.png">
-                Microsoft Paint
-            </li>
-            <li class="item" id="aim-icon" onclick="openDraggableWindow(this)">
-              <img class='icon' src="images/icons/aim.png">
-                AIM
-            </li>
-            <li class="item" id="steam-icon" onclick="openDraggableWindow(this)">
-              <img class='icon' src="images/icons/steam_small.png">
-                Steam98
-            </li>
-            <li class="item" id="rocket" onclick="startFlight()">
-              <img class='icon' src="images/icons/rocket.png">
-                ?????????????
-            </li>
-          </ul>
-        </li>
-        <li class='item folder'>
-          <img class='icon' src="images/icons/msdos.png">
-          G<em>a</em>mes
-          <ul class='menu-content'>
-            <li class="item" onclick="startGame('SOLSUITE');">
-              <img class='icon' src="images/icons/game_icons/solitaire.png">
-              Solitaire
-            </li>
-            <li class="item" onclick="startGame('MSPAC');">
-              <img class='icon' src="images/icons/game_icons/mspacman.png">
-              Ms. Pac-man
-            </li>
-            <li class="item" onclick="startGame('DOOM');">
-              <img class='icon' src="images/icons/game_icons/doom.png">
-              DOOM
-            </li>
-            <li class="item" onclick="startGame('DUKE3D');">
-              <img class='icon' src="images/icons/game_icons/duke3d.png">
-              Duke Nukem 3D
-            </li>
-            <li class="item" onclick="startGame('WOLF3D');">
-              <img class='icon' src="images/icons/game_icons/wolf3d.png">
-              Wolfenstein 3D
-            </li>
-            <li class="item" onclick="startGame('MARIO');">
-              <img class='icon' src="images/icons/game_icons/mario.ico">
-              Mario
-            </li>
-            <li class="item" onclick="startGame('MK3');">
-              <img class='icon' src="images/icons/game_icons/mk3.png">
-              Mortal Kombat 3
-            </li>
-            <li class="item" onclick="startGame('DF');">
-              <img class='icon' src="images/icons/game_icons/darkforces.png">
-              Star Wars: Darkforces
-            </li>
-            <li class="item" onclick="startGame('SSHOCK');">
-              <img class='icon' src="images/icons/game_icons/systemshock.png">
-              Systemshock
-            </li>
-            <li class="item" onclick="startGame('SF2TURBO');">
-              <img class='icon' src="images/icons/game_icons/streetfighter2t.png">
-              Street Fighter 2 Turbo
-            </li>
-            <li class="item" onclick="startGame('SABA');">
-              <img class='icon' src="images/icons/game_icons/tetris.png">
-              Acid Tetris
-            </li>
-          </ul>
-        </li>
-        <li class='item folder'>
-          <img class='icon' src="images/icons/documents.gif">
-          <em>D</em>ocuments
-          <ul class='menu-content'>
-            <li class="item">
-              <img class='icon' src="images/icons/txt.gif">
-              favbands.txt
-            </li>
-            <li class="item">
-              <img class='icon' src="images/icons/txt.gif">
-              passwords.txt
-            </li>
-            <li class="item">
-              <img class='icon' src="images/icons/txt.gif">
-              asdfzmtihlsjfhwi.txt
-            </li>
-            <li class="item" id = "tenacious_icon" onclick="openDraggableWindow(this)">
-              <img class='icon' src="images/icons/mp4.png">
-              tenacious.mp4
-            </li>
-            <li class="item" id = "nft_icon" onclick="openDraggableWindow(this)">
-              <img class='icon' src="images/icons/mp4.png">
-              nft.mp4
-            </li>
-          </ul>
-        </li>
-        <li class='item folder'>
-          <img class='icon' src="images/icons/settings.gif">
-          <em>S</em>ettings
-          <ul class='menu-content'>
-            <li class="item" id = "themes-icon" onclick="openDraggableWindow(this)">
-              <img class='icon' src="images/icons/themes.png">
-                Themes
-            </li>
-          </ul>
-        </li>
-        <li class='item folder'>
-          <img class='icon' src="images/icons/find.gif">
-          <em>F</em>ind
-        </li>
-        <li class='item'>
-          <img class='icon' src="images/icons/help.gif">
-          <em>H</em>elp
-        </li>
-        <li class='item'>
-          <img class='icon' src="images/icons/run.gif">
-          <em>R</em>un...
-        </li>
-        <li class='divider'></li>
-        <li class='item'>
-          <img class='icon' src="images/icons/logoff.gif">
-          <em>L</em>og Off Win98...
-        </li>
-        <li class='item'>
-          <img class='icon' src="images/icons/shutdown.gif">
-          Sh<em>u</em>t Down...
-        </li>
-      </ul>
-    </div>
   </div>
-</div>
 <div id='rocket-container'></div>
 </body>

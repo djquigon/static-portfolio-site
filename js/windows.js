@@ -196,6 +196,11 @@ function getTheme(){
   return theme;
 }
 
+function highlightIcon(icon){
+  overlay = "#" + icon.id + " div";
+  $(overlay).addClass("icon-overlay");
+}
+
 function openDraggableWindow(windowToOpen){
     // make icon and name blue
     theme = getTheme();
@@ -231,8 +236,7 @@ function openDraggableWindow(windowToOpen){
             work_interests = "Full stack web development but preferably front end work. Working in game development eventually is also a goal of mine.";
             skills = "Strong experience in python, ranging from web developement using frameworks such as django, to data mining using various libraries such as pandas, numpy, scikit, and tensorflow. Strong experience with javascript where I've utilized various libraries such as node.js, react, jquery, and three.js. And of course with all this in mind, I'm also very familiar with html, and css. Minor experience in java, c++, and c# from schooling and small personal projects, pretty familiar with java's spring web framework."
             hobbies = "Coding, researching Crypto/DeFi/Web3, watching Atlanta sports teams, grilling, traveling, playing/modding/developing video games."
-            food = String.fromCodePoint(0x1F355); // pizza emoji
-            movie = " Star Wars: The Phantom Menace (just kidding...but not really)";
+
 
 
             window_body.append([
@@ -241,9 +245,6 @@ function openDraggableWindow(windowToOpen){
               $(document.createElement('p')).text(work_interests).prepend($(document.createElement('b')).text("Work Interests:")),
               $(document.createElement('p')).text(skills).prepend($(document.createElement('b')).text("Skills:")),
               $(document.createElement('p')).text(hobbies).prepend($(document.createElement('b')).text("Personal Interests/Hobbies:")),
-              $(document.createElement('p')).text(food).prepend($(document.createElement('b')).text("Favorite Food:")),
-              $(document.createElement('p')).text(movie).prepend($(document.createElement('b')).text("Favorite Movie:")),
-              $(document.createElement('p')).append([$(document.createElement('b')).text("Favorite Game:"), $(document.createElement('img')).attr('src', 'images/chief.gif').css('height', '50px')])
             ]);
             wind.append([title_bar, window_body]);
             wind.draggable();
