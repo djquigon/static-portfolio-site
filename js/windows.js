@@ -197,8 +197,8 @@ function getTheme(){
 }
 
 function highlightIcon(icon){
-  overlay = "#" + icon.id + " div";
-  $(overlay).addClass("icon-overlay");
+  //overlay = "#" + icon.id + " div";
+  //$(overlay).addClass("icon-overlay");
 }
 
 function openDraggableWindow(windowToOpen){
