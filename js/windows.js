@@ -311,14 +311,15 @@ function openDraggableWindow(windowToOpen){
             window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'contact-me'});
 
             //implement here
+            form = $(document.createElement('form')).addClass("gform").attr({method: "POST", action: "https://script.google.com/macros/s/AKfycbxMYqcQqvDpVNaroOR6kSsXLdnhkOwH9wGkv50j/exec"});
             field_row1 = $(document.createElement('div')).addClass("field-row");
             label1 = $(document.createElement('label')).attr({for: "text17"}).text("Email");
-            input1 = $(document.createElement('input')).attr({id: "text17", type: "text"});
+            input1 = $(document.createElement('input')).attr({id: "text17", type: "text", name: "email"});
             field_row1.append([label1, input1]);
 
             field_row2 = $(document.createElement('div')).addClass("field-row");
             label2 = $(document.createElement('label')).attr({for: "text17"}).text("Reason");
-            select = $(document.createElement('select'));
+            select = $(document.createElement('select')).attr("name", "reason");
             option1 = $(document.createElement('option')).text("Personal");
             option2 = $(document.createElement('option')).text("Work-related");
             option3 = $(document.createElement('option')).text("Question");
@@ -327,13 +328,15 @@ function openDraggableWindow(windowToOpen){
             field_row2.append([label2, select]);
 
             field_row3 = $(document.createElement('div')).addClass("field-row-stacked").css("width", "200px");
-            label3 = $(document.createElement('label')).attr({for: "text20"}).text("Message");
-            text_area = $(document.createElement('textarea')).attr({id: "text20", rows: "8",}).css("resize", "none");
+            label3 = $(document.createElement('label')).attr({for: "text20"}).text("Message (be sure to leave your name)");
+            text_area = $(document.createElement('textarea')).attr({id: "text20", rows: "8", name: "message"}).css("resize", "none");
             field_row3.append([label3, text_area]);
 
             submit_button = $(document.createElement('button')).text("Submit")
+
+            form.append([field_row1, field_row2, field_row3, submit_button]);
             //append to window body
-            window_body.append([field_row1, field_row2, field_row3, submit_button]);
+            window_body.append(form);
             wind.append([title_bar, window_body]);
             wind.draggable();
             $(".desktop").append(wind);
