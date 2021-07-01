@@ -66,7 +66,8 @@
       var xhr = new XMLHttpRequest();
       xhr.open('POST', url);
       // xhr.withCredentials = true;
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded", "Access-Control-Allow-Origin:*");
+      alert("here");
       xhr.onreadystatechange = function() {
           if (xhr.readyState === 4 && xhr.status === 200) {
             form.reset();

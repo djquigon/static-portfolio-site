@@ -311,7 +311,7 @@ function openDraggableWindow(windowToOpen){
             window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'contact-me'});
 
             //implement here
-            form = $(document.createElement('form')).addClass("gform").attr({method: "POST", action: "https://script.google.com/macros/s/AKfycbxMYqcQqvDpVNaroOR6kSsXLdnhkOwH9wGkv50j/exec"});
+            form = $(document.createElement('form')).addClass("gform").attr({method: "POST", "data-email": "scheid.logan.work@gmail.com", action: "https://script.google.com/macros/s/AKfycbxMYqcQqvDpVNaroOR6kSsXLdnhkOwH9wGkv50j/exec"});
             field_row1 = $(document.createElement('div')).addClass("field-row");
             label1 = $(document.createElement('label')).attr({for: "text17"}).text("Email");
             input1 = $(document.createElement('input')).attr({id: "text17", type: "email", name: "email", required: "true"});
