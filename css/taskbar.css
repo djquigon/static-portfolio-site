@@ -258,8 +258,6 @@
     height:  39.5px;
     width: 100vw;
     background-color: silver;
-    /*border-top: 2px solid white;*/
-    /*padding: 3px;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -270,7 +268,6 @@
   }
   
   #startbutton {
-    /*float: left;*/ 
     display: inline-block;
     text-decoration: none;
     color: black;
@@ -306,7 +303,6 @@
   }
 
   .time {
-    /*display: inline-block;*/
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
