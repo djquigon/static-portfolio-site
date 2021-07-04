@@ -1,3 +1,6 @@
+/**
+ * Removes the current game from Steam98.
+ */
 function ejectGame(){
     //exit game
     ci.exit()
@@ -8,6 +11,9 @@ function ejectGame(){
     $('.dosbox-button').prop('disabled', true);
 }
 
+/**
+ * Starts the selected game with Steam98.
+ */
 function startGame(game){
     if($('#game').hasClass('no-game') == false){
         alert("⚠️ Either Steam98 isn't started, or you need to eject the current game before you can start another one. Please try again.");
@@ -34,17 +40,26 @@ function startGame(game){
     $('.dosbox-button').prop('disabled', false);
 }
 
+/**
+ * Submit function for rating window.
+ */
 function submitRating(){
     $('#submit-rating').prop('disabled', true);
     $('#rating-text').text("Duly noted, thanks!");
     // submit
 }
 
+/**
+ * Exits the threejs rocket mode by removing the rocket container.
+ */
 function exitFlight(){
     $('#rocket-container').css("display", "none")
     $('#rocket-container button').remove()
 }
 
+/**
+ * Starts the threejs rocket mode by adding the rocket container.
+ */
 function startFlight(){
     $('#rocket-container').css("display", "block")
     $('#rocket-container').append("<button>Press to exit flight</button>");
@@ -54,7 +69,9 @@ function startFlight(){
       });
 }
 
-//Helper method for setZ that gets the highest z-index value for all draggable windows
+/**
+ * Helper method for setZ that gets the highest z-index value for all draggable windows
+ */
 function getHighestDraggableZ(){
     highest_z = 10; //had to make this 10 because of very strange bug that i still dont understand involving z-index at 10
     $('.ui-draggable').each(function(i, obj) {
@@ -66,6 +83,9 @@ function getHighestDraggableZ(){
     return highest_z;
 }
 
+/**
+ * Sets the z-index of the clicked window.
+ */
 function setZ(clicked_window){
   highest_z = parseInt(getHighestDraggableZ());
   if(clicked_window.style.zIndex <= highest_z){
@@ -82,6 +102,9 @@ function setZ(clicked_window){
   }
 }
 
+/**
+ * Closes a window.
+ */
 function closeWindow(windowToClose){
     //get program name (taskbar)
     program_name = windowToClose.parentNode.parentNode.nextElementSibling.id + "-program-container";
@@ -106,11 +129,16 @@ function closeWindow(windowToClose){
     }
 }
 
-//remove program-clicked for all elements
+/**
+ * Remove program-clicked for all elements.
+ */
 function removeProgramClicked(){
   $(".program-clicked").removeClass("program-clicked");
 }
 
+/**
+ * Changes the windows theme currently displayed.
+ */
 function changeTheme(theme){
   $(".desktop").removeAttr('style');
   $(".startbar").removeAttr('style');
@@ -191,16 +219,25 @@ function changeTheme(theme){
   }
 }
 
+/**
+ * Returns the current windows theme.
+ */
 function getTheme(){
   theme = $("#intro-title-bar").attr('class');
   return theme;
 }
 
+/**
+ * Highlights a given desktop icon.
+ */
 function highlightIcon(icon){
   //overlay = "#" + icon.id + " div";
   //$(overlay).addClass("icon-overlay");
 }
 
+/**
+ * Opens windows based off which window to open is passed in.
+ */
 function openDraggableWindow(windowToOpen){
     // make icon and name blue
     theme = getTheme();

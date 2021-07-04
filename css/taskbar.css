@@ -247,7 +247,6 @@
   resize: both;
 }
 
-/*HERE*/
 /* JQuery ui icom removal */ 
 .ui-icon { background-image: url("") !important; }
 
