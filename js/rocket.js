@@ -28,7 +28,9 @@ var smoothing = 10;
 var mousePos = {x:0, y:0};
 var halfPI = Math.PI/2;
 
-// initializes three.js variables
+/**
+ * Initializes three.js variables 
+ */
 function init(){
   // create the scene
   scene = new THREE.Scene();
@@ -69,6 +71,9 @@ function init(){
 	document.addEventListener('touchmove',handleTouchMove, false);
 }
 
+/**
+ * Adjust properties based on the size of the window.
+ */
 function onWindowResize() {
   HEIGHT = window.innerHeight;
   WIDTH = window.innerWidth;
@@ -83,11 +88,17 @@ function onWindowResize() {
   xLimit = yLimit *camera.aspect;
 }
 
+/**
+ * Handles the start of the user touching the mouse or mousepad. 
+ */
 function handleMouseMove(event) {
   mousePos = {x:event.clientX, y:event.clientY};
   updateSpeed()
 }
 
+/**
+ * Initializes three.js variables 
+ */
 function handleTouchStart(event) {
   if (event.touches.length > 1) {
     event.preventDefault();
@@ -96,11 +107,17 @@ function handleTouchStart(event) {
   }
 }
 
+/**
+ * Handles the end of the user touching the mouse or mousepad. 
+ */
 function handleTouchEnd(event) {
     mousePos = {x:windowHalfX, y:windowHalfY};
     updateSpeed();
 }
 
+/**
+ * Handles movement of mouse or touchpad.
+ */
 function handleTouchMove(event) {
   if (event.touches.length == 1) {
     event.preventDefault();
@@ -109,12 +126,17 @@ function handleTouchMove(event) {
   }
 }
 
+/**
+ * Helper function that updates the speed of the rocket.
+ */
 function updateSpeed(){
   speed.x = (mousePos.x / WIDTH)*100;
   speed.y = (mousePos.y-windowHalfY) / 10;
 }
 
-// main animation loop
+/**
+ * Constant loop that updates the rocket and asteroids position, color, speed, etc.
+ */
 function loop() {
   
   // Update rocket position, rotation, scale depending on the mouse position
@@ -164,7 +186,9 @@ function loop() {
   requestAnimationFrame(loop);
 }
 
-// lights
+/**
+ * Creates a light object and adds it to the scene.
+ */
 function createLight() {
   light = new THREE.HemisphereLight(0xffffff, 0xffffff, .3)
   scene.add(light);
@@ -173,6 +197,9 @@ function createLight() {
  	scene.add(shadowLight);
 }
 
+/**
+ * Creates the 3D rocket object and adds it to the scene.
+ */
 function createRocket(){
   // group that contains each part of the rocket
   rocket = new THREE.Group();
@@ -221,7 +248,9 @@ function createRocket(){
   scene.add(rocket);
 }
 
-// particles
+/**
+ * Initializes three.js variables 
+ */
 function createParticle(){
   var particle, geometryCore, ray, w,h,d, sh, sv;
   
@@ -238,7 +267,9 @@ function createParticle(){
   return particle;
 }
 
-// depending if there is particles stored in the waintingParticles array, get one from there or create a new one
+/**
+ * Depending if there is particles stored in the waintingParticles array, get one from there or create a new one
+ */
 function getParticle(){
   if (waitingParticles.length) {
     return waitingParticles.pop();
@@ -247,7 +278,9 @@ function getParticle(){
   }
 }
 
-// create and set the particle position randomly but keep it out of the field of view, and give it a random scale
+/**
+ * Create and set the particle position randomly but keep it out of the field of view, and give it a random scale
+ */
 function flyParticle(){
   var particle = getParticle();
   particle.position.x = xLimit;
@@ -259,12 +292,18 @@ function flyParticle(){
  	scene.add(particle);
 }
 
+/**
+ * Returns a random color using hexToRGB.
+ */
 function getRandomColor(){
   var col = hexToRgb(colors[Math.floor(Math.random()*colors.length)]);
   var threecol = new THREE.Color("rgb("+col.r+","+col.g+","+col.b+")");
   return threecol;
 }
   
+/**
+ * Converts a hex value to an RGB value.
+ */
 function hexToRgb(hex) {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result ? {
