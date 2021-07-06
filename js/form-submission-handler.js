@@ -1,5 +1,8 @@
 (function() {
-    // get all data in form and return object
+  
+    /**
+    * Gets the entered data fron the contact me form.
+    */
     function getFormData(form) {
       var elements = form.elements;
       var honeypot;
@@ -49,7 +52,10 @@
   
       return {data: formData, honeypot: honeypot};
     }
-  
+
+    /**
+    * Processes the data entered into the contact me form.
+    */
     function handleFormSubmit(event) {  // handles form submit without any jquery
       event.preventDefault();           // we are submitting via xhr below
       var form = event.target;
@@ -87,16 +93,22 @@
       }).join('&');
       xhr.send(encoded);
     }
-    
+
+    /**
+    * Bind to the submit event of our form
+    */
     function loaded() {
-      // bind to the submit event of our form
+      // 
       var forms = document.querySelectorAll("form.gform");
       for (var i = 0; i < forms.length; i++) {
         forms[i].addEventListener("submit", handleFormSubmit, false);
       }
     };
     document.addEventListener("DOMContentLoaded", loaded, false);
-  
+    
+    /**
+    * Disable all buttons in a form.
+    */
     function disableAllButtons(form) {
       var buttons = form.querySelectorAll("button");
       for (var i = 0; i < buttons.length; i++) {
