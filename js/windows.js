@@ -23,7 +23,6 @@ function startGame(game){
     $("#game-title").text(game);
     $("#menu").css('display', 'none');
     $("#startbutton").attr("class", "startbutton-off");
-    // fix start button toggle
     $("#jsdos").css('display', 'inline-block')
     Dos(document.getElementById("jsdos"), { 
         wdosboxUrl: "https://js-dos.com/6.22/current/wdosbox.js",
@@ -66,14 +65,14 @@ function startFlight(){
     $('#rocket-container button').css({"color": "red", "background-color": "black", "left": "45vw", "bottom": "10px"})
     $('#rocket-container button').click(function() {
         exitFlight();
-      });
+    });
 }
 
 /**
  * Helper method for setZ that gets the highest z-index value for all draggable windows
  */
 function getHighestDraggableZ(){
-    highest_z = 10; //had to make this 10 because of very strange bug that i still dont understand involving z-index at 10
+    highest_z = 10; //had to make this 10 for bug reasons
     $('.ui-draggable').each(function(i, obj) {
       z = $(obj).css('z-index');
       if(z > highest_z){

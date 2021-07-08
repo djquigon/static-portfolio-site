@@ -64,7 +64,6 @@ $(document).ready(function() {
     $('#menu').hide();
     // remove icon overlay
     //$("#desktop-icons div").removeClass("icon-overlay");
-    //alert("here");
     //$("#recycle-container div").removeClass("icon-overlay");
   });
 }); // end document ready
