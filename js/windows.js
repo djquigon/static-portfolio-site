@@ -288,7 +288,6 @@ function openDraggableWindow(windowToOpen){
             //create program
             program = "logan"
             program_text = "Logan.exe";
-
           }
           break;
         case "projects-icon":
