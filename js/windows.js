@@ -325,6 +325,7 @@ function openDraggableWindow(windowToOpen){
             //implement here
             //append to window body
             window_body.append([
+              $(document.createElement('iframe')).attr({src: "assets/documents/scheid_resume.pdf#toolbar=0", width: "1000px", height: "1000px"}),
               $(document.createElement('p')).append($(document.createElement('a')).attr({target: '_blank', href: 'assets/documents/scheid_resume.pdf'}).text("PDF"))
             ]);
             wind.append([title_bar, window_body]);
