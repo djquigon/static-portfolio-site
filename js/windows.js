@@ -270,7 +270,7 @@ function openDraggableWindow(windowToOpen){
 
             intro = "Born in December 1997, grew up in Atlanta, Georgia. Graduated high school in 2016 and started coding towards the end of my first year of college in 2017 after first learning about Bitcoin. Switched my major to computer science the following year and graduated from the University of Georgia in spring 2021.";
             work_interests = "Full stack web development but preferably front end work. Working in game development eventually is also a goal of mine.";
-            skills = "Strong experience in python, ranging from web developement using frameworks such as django, to data mining using various libraries such as pandas, numpy, scikit, and tensorflow. Strong experience with javascript where I've utilized various libraries such as node.js, react, jquery, and three.js. And of course with all this in mind, I'm also very familiar with html, and css. Minor experience in java, c++, and c# from schooling and small personal projects, pretty familiar with java's spring web framework."
+            skills = "Strong experience in python, ranging from web developement using frameworks such as django, to data mining using various libraries such as pandas, numpy, scikit, and tensorflow. Strong experience with javascript where I've utilized various libraries such as node.js, react, jquery, and three.js. And of course with all this in mind, I'm also very familiar with html, and css. Minor experience in java, c++, and c# from schooling and small personal projects in Unity, pretty familiar with java's spring web framework."
             hobbies = "Coding, researching Crypto/DeFi/Web3, watching Atlanta sports teams, grilling, traveling, playing/modding/developing video games."
 
 
@@ -504,25 +504,16 @@ function openDraggableWindow(windowToOpen){
             //implement here
             theme_container = $(document.createElement('div')).css({"display": "flex", "flex-direction": "column"});
             theme_container.append([
-              $(document.createElement('p')).append($(document.createElement('b')).text("Light")),
+              $(document.createElement('p')).text("Select a theme"),
               $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onclick: "changeTheme('light')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("🌞")),
-              $(document.createElement('p')).append($(document.createElement('b')).text("Dark")),
               $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onclick: "changeTheme('dark')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("🌚")),
-              $(document.createElement('p')).append($(document.createElement('b')).text("Rose-Gold")),
               $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onclick: "changeTheme('rose-gold')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("🌹")),
-              $(document.createElement('p')).append($(document.createElement('b')).text("Clouds")),
               $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onclick: "changeTheme('clouds')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("☁️")),
-              $(document.createElement('p')).append($(document.createElement('b')).text("Cybercity")),
               $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onclick: "changeTheme('cybercity')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("🌆")),
-              $(document.createElement('p')).append($(document.createElement('b')).text("Cybernightcity")),
               $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onclick: "changeTheme('cybernightcity')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("🌃")),
-              $(document.createElement('p')).append($(document.createElement('b')).text("Galaxy")),
               $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onclick: "changeTheme('galaxy')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("🌌")),
-              $(document.createElement('p')).append($(document.createElement('b')).text("XP")),
               $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onclick: "changeTheme('xp')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("🌄")),
-              $(document.createElement('p')).append($(document.createElement('b')).text("Doge")),
               $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onclick: "changeTheme('doge')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").append($(document.createElement('img')).attr("src", "images/doge.png").css({"width": "32px", "height": "40px"}))),
-              $(document.createElement('p')).append($(document.createElement('b')).text("Star Wars")),
               $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onclick: "changeTheme('star-wars')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("⭐")),
             ]);
             //append to window body
