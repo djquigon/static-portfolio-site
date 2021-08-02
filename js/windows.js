@@ -350,7 +350,7 @@ function openDraggableWindow(windowToOpen){
             form = $(document.createElement('form')).addClass("gform").attr({method: "POST", "data-email": "scheid.logan.work@gmail.com", action: "https://script.google.com/macros/s/AKfycbxMYqcQqvDpVNaroOR6kSsXLdnhkOwH9wGkv50j/exec"});
             field_row1 = $(document.createElement('div')).addClass("field-row");
             label1 = $(document.createElement('label')).attr({for: "text17"}).text("Email");
-            input1 = $(document.createElement('input')).attr({id: "text17", type: "email", name: "email", required: "true"});
+            input1 = $(document.createElement('input')).attr({id: "text17", type: "email", name: "email", required: "true"}).css("width", "175px");
             field_row1.append([label1, input1]);
 
             field_row2 = $(document.createElement('div')).addClass("field-row");
@@ -363,9 +363,9 @@ function openDraggableWindow(windowToOpen){
             select.append([option1, option2, option3, option4]);
             field_row2.append([label2, select]);
 
-            field_row3 = $(document.createElement('div')).addClass("field-row-stacked").css("width", "200px");
+            field_row3 = $(document.createElement('div')).addClass("field-row-stacked");
             label3 = $(document.createElement('label')).attr({for: "text20"}).text("Message (leave your name)");
-            text_area = $(document.createElement('textarea')).attr({id: "text20", rows: "8", name: "message", required: "true"}).css("resize", "none");
+            text_area = $(document.createElement('textarea')).attr({id: "text20", rows: "15", cols: "60", name: "message", required: "true"}).css("resize", "none");
             field_row3.append([label3, text_area]);
 
             submit_button = $(document.createElement('button')).text("Submit").css({left: "30%", position: "relative", "margin-top": "5%"});
