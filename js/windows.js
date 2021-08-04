@@ -309,8 +309,44 @@ function openDraggableWindow(windowToOpen){
             web3xr = $(document.createElement('li')).append($(document.createElement('details')).append([
               $(document.createElement('summary')).text("web3xr"),
               $(document.createElement('ul')).append([
-                $(document.createElement('li')).text("Image"),
-                $(document.createElement('li')).text("Description"),
+                $(document.createElement('li')).append($(document.createElement('img')).attr("src", "images/web3xr_project.png").css("width", "100px")),
+                $(document.createElement('li')).text("A web app containing a small demo exemplifying what's possible when combining web3.js, WebXR, and Three.js."),
+                $(document.createElement('li')).append($(document.createElement('a')).text("Medium Link").css("color", "#00f").attr({href: "https://medium.com/@scheidlogan", target: "_blank"})),
+                $(document.createElement('li')).append($(document.createElement('a')).text("Source Code").css("color", "#00f").attr({href: "https://github.com/djquigon", target: "_blank"})),
+              ])
+            ]));
+            pokedex = $(document.createElement('li')).append($(document.createElement('details')).append([
+              $(document.createElement('summary')).text("potential-pokedex"),
+              $(document.createElement('ul')).append([
+                $(document.createElement('li')).append($(document.createElement('img')).attr("src", "images/pokedex_project.png").css("width", "100px")),
+                $(document.createElement('li')).text("Classifying Pokemon images based on their primary types using a tensorflow convolutional neural network."),
+                $(document.createElement('li')).append($(document.createElement('a')).text("Medium Link").css("color", "#00f").attr({href: "https://medium.com/@scheidlogan", target: "_blank"})),
+                $(document.createElement('li')).append($(document.createElement('a')).text("Source Code").css("color", "#00f").attr({href: "https://github.com/djquigon", target: "_blank"})),
+              ])
+            ]));
+            exoplanet = $(document.createElement('li')).append($(document.createElement('details')).append([
+              $(document.createElement('summary')).text("exoplanet-identification"),
+              $(document.createElement('ul')).append([
+                $(document.createElement('li')).append($(document.createElement('img')).attr("src", "images/exoplanet_project.png").css("width", "100px")),
+                $(document.createElement('li')).text("Identifying exoplanets from a NASA dataset using various classification models from scikit-learn."),
+                $(document.createElement('li')).append($(document.createElement('a')).text("Medium Link").css("color", "#00f").attr({href: "https://medium.com/@scheidlogan", target: "_blank"})),
+                $(document.createElement('li')).append($(document.createElement('a')).text("Source Code").css("color", "#00f").attr({href: "https://github.com/djquigon", target: "_blank"})),
+              ])
+            ]));
+            sentiment = $(document.createElement('li')).append($(document.createElement('details')).append([
+              $(document.createElement('summary')).text("financial-sentiment-analysis"),
+              $(document.createElement('ul')).append([
+                $(document.createElement('li')).append($(document.createElement('img')).attr("src", "images/sentiment_project.png").css("width", "100px")),
+                $(document.createElement('li')).text("Classifying sentiment of financial headlines using a GRU recurrent neural network."),
+                $(document.createElement('li')).append($(document.createElement('a')).text("Medium Link").css("color", "#00f").attr({href: "https://medium.com/@scheidlogan", target: "_blank"})),
+                $(document.createElement('li')).append($(document.createElement('a')).text("Source Code").css("color", "#00f").attr({href: "https://github.com/djquigon", target: "_blank"})),
+              ])
+            ]));
+            ugastats = $(document.createElement('li')).append($(document.createElement('details')).append([
+              $(document.createElement('summary')).text("uga-stats"),
+              $(document.createElement('ul')).append([
+                $(document.createElement('li')).append($(document.createElement('img')).attr("src", "images/ugastats_project.png").css("width", "100px")),
+                $(document.createElement('li')).text("A web app for UGA football statistics junkies. Users can create accounts to view and save their favorite players and stats."),
                 $(document.createElement('li')).append($(document.createElement('a')).text("Medium Link").css("color", "#00f").attr({href: "https://medium.com/@scheidlogan", target: "_blank"})),
                 $(document.createElement('li')).append($(document.createElement('a')).text("Source Code").css("color", "#00f").attr({href: "https://github.com/djquigon", target: "_blank"})),
               ])
@@ -318,13 +354,9 @@ function openDraggableWindow(windowToOpen){
             //implement here
             //append to window body
             tree.append([
-              item1,
-              item2,
-              web3xr
+              item1, item2, web3xr, pokedex, exoplanet, sentiment, ugastats
             ]);
-            window_body.append([
-              tree,
-            ]);
+            window_body.append(tree);
             wind.append([title_bar, window_body]);
             wind.draggable();
             $(".desktop").append(wind);
@@ -496,14 +528,9 @@ function openDraggableWindow(windowToOpen){
             //implement here
             //append to window body
             tree.append([
-              item1,
-              item2,
-              item3,
-              item4
+              item1, item2, item3, item4
             ]);
-            window_body.append([
-              tree,
-            ]);
+            window_body.append(tree);
             wind.append([title_bar, window_body]);
             wind.draggable();
             $(".desktop").append(wind);
@@ -538,9 +565,7 @@ function openDraggableWindow(windowToOpen){
               $(document.createElement('button')).attr("font-size", "16").attr({size: "36", onclick: "changeTheme('star-wars')"}).append($(document.createElement('span')).attr("role", "img").css("font-size", "30px").text("⭐")),
             ]);
             //append to window body
-            window_body.append([
-              theme_container
-            ]);
+            window_body.append(theme_container);
             wind.append([title_bar, window_body]);
             wind.draggable();
             $(".desktop").append(wind);
@@ -605,13 +630,7 @@ function openDraggableWindow(windowToOpen){
             ]);
             //append to window body
             window_body.append([
-              aim_header,
-              hr,
-              field_row1,
-              field_row2,
-              field_row3,
-              field_row4,
-              field_row5
+              aim_header, hr, field_row1, field_row2, field_row3, field_row4, field_row5
             ]);
             wind.append([title_bar, window_body]);
             wind.draggable();
@@ -643,9 +662,7 @@ function openDraggableWindow(windowToOpen){
 
             //append to window body
             window_body.append([
-              rating_text,
-              field_row1,
-              submit_button
+              rating_text, field_row1, submit_button
             ]);
             wind.append([title_bar, window_body]);
             wind.draggable();
@@ -668,9 +685,7 @@ function openDraggableWindow(windowToOpen){
             //implement here
             video = $(document.createElement('iframe')).css({width: "560", height: "315"}).attr({src: "https://www.youtube.com/embed/_lK4cX5xGiQ", allow: "fullscreen"});
             //append to window body
-            window_body.append([
-              video
-            ]);
+            window_body.append(video);
             wind.append([title_bar, window_body]);
             wind.draggable();
             $(".desktop").append(wind);
@@ -692,9 +707,7 @@ function openDraggableWindow(windowToOpen){
             //implement here
             video = $(document.createElement('iframe')).css({width: "560", height: "315"}).attr({src: "https://www.youtube.com/embed/yY4WK9XDFKg", allow: "fullscreen"});
             //append to window body
-            window_body.append([
-              video
-            ]);
+            window_body.append(video);
             wind.append([title_bar, window_body]);
             wind.draggable();
             $(".desktop").append(wind);
