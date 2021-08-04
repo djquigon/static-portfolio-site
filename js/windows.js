@@ -300,9 +300,24 @@ function openDraggableWindow(windowToOpen){
 
             window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'projects'});
 
+            tree = $(document.createElement('ul')).addClass("tree-view").css("width", "400px");
+            item1 = $(document.createElement('li')).append($(document.createElement('strong')).css("color", '#55468e').text('✨ Projects ✨'));
+            steam98_text = "Steam98 is my implementation of js-dos, a javascript library that allows you to run DOS programs in a browser. Simply " + 
+            "pick a game from the Games folder in the start menu and start playing. You can only load one game at a time, but you can exit a game whenever " + 
+            "you wish. Below are links to all the games with information about them. Contact me if you have any game requests!";
+            item2 = $(document.createElement('li')).text("What is Steam98?").append(
+              $(document.createElement('ul')).append($(document.createElement('li')).text(steam98_text))
+            );
+            item3 = $(document.createElement('li')).append($(document.createElement('details')).attr({open: "True"}).append($(document.createElement('summary')).text("Games")));
             //implement here
             //append to window body
+            tree.append([
+              item1,
+              item2,
+              item3
+            ]);
             window_body.append([
+              tree,
             ]);
             wind.append([title_bar, window_body]);
             wind.draggable();
