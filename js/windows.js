@@ -418,7 +418,7 @@ function openDraggableWindow(windowToOpen){
 
             field_row3 = $(document.createElement('div')).addClass("field-row-stacked");
             label3 = $(document.createElement('label')).attr({for: "text20"}).text("Message (leave your name)");
-            text_area = $(document.createElement('textarea')).attr({id: "text20", rows: "15", cols: "60", name: "message", required: "true"}).css("resize", "none");
+            text_area = $(document.createElement('textarea')).attr({id: "text20", rows: "15", cols: "60", name: "message", required: "true"});
             field_row3.append([label3, text_area]);
 
             submit_button = $(document.createElement('button')).text("Submit").css({left: "30%", position: "relative", "margin-top": "5%"});
