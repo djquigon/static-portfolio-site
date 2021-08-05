@@ -490,40 +490,34 @@ function openDraggableWindow(windowToOpen){
               $(document.createElement('ul')).append($(document.createElement('li')).text(steam98_text))
             );
             item3 = $(document.createElement('li')).append($(document.createElement('details')).attr({open: "True"}).append($(document.createElement('summary')).text("Games")));
-            item4 = $(document.createElement('ul')).append([
+            //list of all games and their links
+            item4 = $(document.createElement('ul')).attr("id", "steam-help-list").append([
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Solitaire").attr({target: '_blank',href: "https://dosgames.com/game/solitaire-suite/"}).css({"text-decoration": "underline"})              
-              ),
+                $(document.createElement('a')).text("Solitaire").attr({target: '_blank',href: "https://dosgames.com/game/solitaire-suite/"})),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Ms. Pacman").attr({target: '_blank',href: "https://dosgames.com/game/ms-pacman-pc"}).css({"text-decoration": "underline"})                
-              ),
+                $(document.createElement('a')).text("Ms. Pacman").attr({target: '_blank',href: "https://dosgames.com/game/ms-pacman-pc"})),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("DOOM").attr({target: '_blank',href: "https://dosgames.com/game/doom"}).css({"text-decoration": "underline"})                
-              ),
+                $(document.createElement('a')).text("DOOM").attr({target: '_blank',href: "https://dosgames.com/game/doom"})),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Duke Nukem 3D").attr({target: '_blank',href: "https://dosgames.com/game/duke-nukem-3d"}).css({"text-decoration": "underline"})                
-              ),
+                $(document.createElement('a')).text("Duke Nukem 3D").attr({target: '_blank',href: "https://dosgames.com/game/duke-nukem-3d"})),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Wolfenstein 3D").attr({target: '_blank',href: "https://dosgames.com/game/wolfenstein-3d"}).css({"text-decoration": "underline"})                
-              ),
+                $(document.createElement('a')).text("Wolfenstein 3D").attr({target: '_blank',href: "https://dosgames.com/game/wolfenstein-3d"})),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Mario").attr({target: '_blank',href: "https://dosgames.com/game/mario-and-luigi"}).css({"text-decoration": "underline"})                
-              ),
+                $(document.createElement('a')).text("Mario").attr({target: '_blank',href: "https://dosgames.com/game/mario-and-luigi"})),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Mortal Kombat 3").attr({target: '_blank',href: "https://dosgames.com/game/mortal-kombat-3"}).css({"text-decoration": "underline"})                
-              ),
+                $(document.createElement('a')).text("Mortal Kombat 3").attr({target: '_blank',href: "https://dosgames.com/game/mortal-kombat-3"})),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Star Wars: Dark Forces").attr({target: '_blank',href: "https://dosgames.com/game/star-wars-dark-forces/"}).css({"text-decoration": "underline"})                
-              ),
+                $(document.createElement('a')).text("Star Wars: Dark Forces").attr({target: '_blank',href: "https://dosgames.com/game/star-wars-dark-forces/"})),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Systemshock").attr({target: '_blank',href: "https://dosgames.com/game/system-shock"}).css({"text-decoration": "underline"})                
-              ),
+                $(document.createElement('a')).text("Systemshock").attr({target: '_blank',href: "https://dosgames.com/game/system-shock"})),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Street Fighter 2 Turbo").attr({target: '_blank',href: "https://dosgames.com/game/super-street-fighter-ii-turbo"}).css({"text-decoration": "underline"})                
-              ),
+                $(document.createElement('a')).text("Street Fighter 2 Turbo").attr({target: '_blank',href: "https://dosgames.com/game/super-street-fighter-ii-turbo"})),
               $(document.createElement('li')).append(
-                $(document.createElement('a')).text("Acid Tetris").attr({target: '_blank',href: "https://dosgames.com/game/acid-tetris"}).css({"text-decoration": "underline"})                
-              ),
+                $(document.createElement('a')).text("Acid Tetris").attr({target: '_blank',href: "https://dosgames.com/game/acid-tetris"})),
+              $(document.createElement('li')).append(
+                $(document.createElement('a')).text("Chess88").attr({target: '_blank',href: "https://dosgames.com/game/chess88/"})),
+              $(document.createElement('li')).append(
+                $(document.createElement('a')).text("Viking Siege").attr({target: '_blank',href: "https://dosgames.com/game/viking-siege/"}))
             ]);
             //implement here
             //append to window body

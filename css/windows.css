@@ -231,4 +231,7 @@
     position: absolute;
   }
 
+  #steam-help-list a {
+    color: #00f;
+  }
   
