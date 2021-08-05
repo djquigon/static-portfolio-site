@@ -49,7 +49,6 @@ function clippy(){
 }
 
 $(document).ready(function() {
-  //start up music
   // toggle start menu 
   $("#startbutton").click(function() {
     $("#startbutton").toggleClass("startbutton-on");
