@@ -320,8 +320,8 @@ function openDraggableWindow(windowToOpen){
               $(document.createElement('ul')).append([
                 $(document.createElement('li')).append($(document.createElement('img')).attr("src", "images/pokedex_project.PNG").css("width", "100px")),
                 $(document.createElement('li')).text("Classifying Pokemon images based on their primary types using a tensorflow convolutional neural network."),
-                $(document.createElement('li')).append($(document.createElement('a')).text("Medium Link").css("color", "#00f").attr({href: "https://medium.com/@scheidlogan", target: "_blank"})),
-                $(document.createElement('li')).append($(document.createElement('a')).text("Source Code").css("color", "#00f").attr({href: "https://github.com/djquigon", target: "_blank"})),
+                $(document.createElement('li')).append($(document.createElement('a')).text("Medium Link").css("color", "#00f").attr({href: "https://medium.com/@scheidlogan/creating-a-pok%C3%A9dex-pok%C3%A9mon-image-classification-using-a-convolutional-neural-network-ab2a0cb54d03", target: "_blank"})),
+                $(document.createElement('li')).append($(document.createElement('a')).text("Source Code").css("color", "#00f").attr({href: "https://github.com/djquigon/potential-pokedex", target: "_blank"})),
               ])
             ]));
             exoplanet = $(document.createElement('li')).append($(document.createElement('details')).append([
@@ -329,8 +329,8 @@ function openDraggableWindow(windowToOpen){
               $(document.createElement('ul')).append([
                 $(document.createElement('li')).append($(document.createElement('img')).attr("src", "images/exoplanet_project.PNG").css("width", "100px")),
                 $(document.createElement('li')).text("Identifying exoplanets from a NASA dataset using various classification models from scikit-learn."),
-                $(document.createElement('li')).append($(document.createElement('a')).text("Medium Link").css("color", "#00f").attr({href: "https://medium.com/@scheidlogan", target: "_blank"})),
-                $(document.createElement('li')).append($(document.createElement('a')).text("Source Code").css("color", "#00f").attr({href: "https://github.com/djquigon", target: "_blank"})),
+                $(document.createElement('li')).append($(document.createElement('a')).text("Medium Link").css("color", "#00f").attr({href: "https://medium.com/@scheidlogan/identifying-exoplanets-using-multiple-classification-models-7ee48024d7fd", target: "_blank"})),
+                $(document.createElement('li')).append($(document.createElement('a')).text("Source Code").css("color", "#00f").attr({href: "https://github.com/djquigon/exoplanet-identification", target: "_blank"})),
               ])
             ]));
             sentiment = $(document.createElement('li')).append($(document.createElement('details')).append([
@@ -338,8 +338,8 @@ function openDraggableWindow(windowToOpen){
               $(document.createElement('ul')).append([
                 $(document.createElement('li')).append($(document.createElement('img')).attr("src", "images/sentiment_project.PNG").css("width", "100px")),
                 $(document.createElement('li')).text("Classifying sentiment of financial headlines using a GRU recurrent neural network."),
-                $(document.createElement('li')).append($(document.createElement('a')).text("Medium Link").css("color", "#00f").attr({href: "https://medium.com/@scheidlogan", target: "_blank"})),
-                $(document.createElement('li')).append($(document.createElement('a')).text("Source Code").css("color", "#00f").attr({href: "https://github.com/djquigon", target: "_blank"})),
+                $(document.createElement('li')).append($(document.createElement('a')).text("Medium Link").css("color", "#00f").attr({href: "https://medium.com/@scheidlogan/financial-headline-sentiment-analysis-using-a-recurrent-neural-network-dabbfde08233", target: "_blank"})),
+                $(document.createElement('li')).append($(document.createElement('a')).text("Source Code").css("color", "#00f").attr({href: "https://github.com/djquigon/financial-sentiment-analysis", target: "_blank"})),
               ])
             ]));
             ugastats = $(document.createElement('li')).append($(document.createElement('details')).append([
