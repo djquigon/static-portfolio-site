@@ -268,7 +268,7 @@ function openDraggableWindow(windowToOpen){
             header_image2 = $(document.createElement('img')).attr({src: 'images/purp.gif'}).addClass("purp");
             header = $(document.createElement('div')).css({"display": "flex", "justify-content": "space-between"}).append([header_image1, header_text, header_image2]);
 
-            intro = "Grew up in Atlanta, Georgia. Started coding towards the end of my first year of college in 2017 after first learning about Bitcoin. Switched my major to computer science the following year and graduated from the University of Georgia in spring 2021.";
+            intro = "Based in Atlanta, Georgia. Started coding towards the end of my first year of college in early 2017 after first learning about Bitcoin. Graduated from the University of Georgia with a major in computer science in spring 2021.";
             work_interests = "Full stack web development but preferably front end work. Working in game development eventually is also a goal of mine.";
             skills = "Strong experience in python, ranging from web developement using frameworks such as django, to data mining using various libraries such as pandas, numpy, scikit, and tensorflow. Strong experience with javascript where I've utilized various libraries such as node.js, react, jquery, and three.js. And of course with all this in mind, I'm also very familiar with html, and css. Minor experience in java, c++, and c# from schooling and small personal projects in Unity, pretty familiar with java's spring web framework."
             hobbies = "Coding, researching Crypto/DeFi/Web3, watching Atlanta sports teams, grilling, traveling, playing/modding/developing video games."
