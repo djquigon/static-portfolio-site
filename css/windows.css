@@ -1,4 +1,4 @@
-.block-centered{
+.desktop-content{
     display: flex;
     position: absolute;
     flex-direction: column;
@@ -228,6 +228,12 @@
   #recycle-container{
     right: 2vw;
     bottom: 2vh;
+    position: absolute;
+  }
+
+  #wallet-container {
+    right: 2vw;
+    top: 2vh;
     position: absolute;
   }
 
