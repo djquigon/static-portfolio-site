@@ -376,7 +376,7 @@ function openDraggableWindow(windowToOpen){
             //implement here
             //append to window body
             window_body.append([
-              $(document.createElement('iframe')).attr({src: "assets/documents/scheid_resume.pdf#toolbar=0", width: "1000px", height: "1000px"}),
+              $(document.createElement('iframe')).attr({src: "assets/documents/scheid_resume.pdf#toolbar=0", width: "480px", height: "480px"}),
               $(document.createElement('p')).css("text-align", "center").append($(document.createElement('a')).attr({target: '_blank', href: 'assets/documents/scheid_resume.pdf'}).text("PDF"))
             ]);
             wind.append([title_bar, window_body]);
@@ -397,7 +397,9 @@ function openDraggableWindow(windowToOpen){
             window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'contact-me'});
 
             //implement here
-            form = $(document.createElement('form')).addClass("gform").attr({method: "POST", "data-email": "scheid.logan.work@gmail.com", action: "https://script.google.com/macros/s/AKfycbxMYqcQqvDpVNaroOR6kSsXLdnhkOwH9wGkv50j/exec"});
+            note = $(document.createElement('b')).html("Please note that this form does not function on mobile.<br>If you're on mobile, email me at ").append($(document.createElement("a")).attr({href: "mailto: scheid.logan.work@gmail.com"}).html("scheid.logan.work@gmail.com"))
+
+            form = $(document.createElement('form')).addClass("gform").attr({method: "POST", "data-email": "scheid.logan.work@gmail.com", action: "https://script.google.com/macros/s/AKfycbxMYqcQqvDpVNaroOR6kSsXLdnhkOwH9wGkv50j/exec"}).css("padding-top", "2%");
             field_row1 = $(document.createElement('div')).addClass("field-row");
             label1 = $(document.createElement('label')).attr({for: "text17"}).text("Email");
             input1 = $(document.createElement('input')).attr({id: "text17", type: "email", name: "email", required: "true"}).css("width", "175px");
@@ -422,7 +424,7 @@ function openDraggableWindow(windowToOpen){
 
             form.append([field_row1, field_row2, field_row3, submit_button]);
             //append to window body
-            window_body.append(form);
+            window_body.append(note, form);
             wind.append([title_bar, window_body]);
 
             //create program
