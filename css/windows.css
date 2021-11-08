@@ -1,18 +1,18 @@
-.desktop-content{
+#desktop-content{
+    width: max-content;
+    height: max-content;
+    margin: 0 auto;
     display: flex;
-    position: absolute;
     flex-direction: column;
     align-content: center;
     align-items: center;
-    justify-content: center;
-    width: 45vw;
-    left: 25vw;
+    justify-content: space-between;
 }
 
 #welcome{
-    margin-left: 10vw;
-    margin-right: 10vw;
-    width: 400px;
+    width: 320px;
+    margin: auto;
+    margin-top: 3vh;
 }
 
 #rating-bar{
@@ -35,16 +35,13 @@
 
 #desktop-icons{
     position: absolute;
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    flex-direction: column;
     padding-left: 1vw;
     padding-top: 2vh;
     z-index: -999;
 }
 
 .desktop-icon{
+    display: block;
     text-align: center;
     text-decoration: none;
     font-family: "Pixelated MS Sans Serif", Tahoma;
@@ -53,7 +50,7 @@
 }
 
 .desktop-icon img{
-    height: 40px;
+    height: 3vh;
 }
 
 .icon-overlay{
@@ -61,7 +58,6 @@
 }
 
 .window{
-    margin-top: 3vh;
     box-shadow: 5px 5px 20px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
 }
 
@@ -165,10 +161,8 @@
 }
 
 #draggable-window{
-    z-index: 11;
+    top: 15%;
     text-align: left;
-    top: 20%;
-    left: 30%;
     width: max-content;
     height: max-content;
 }
@@ -227,13 +221,7 @@
 
   #recycle-container{
     right: 2vw;
-    bottom: 2vh;
-    position: absolute;
-  }
-
-  #wallet-container {
-    right: 2vw;
-    top: 2vh;
+    bottom: 4vh;
     position: absolute;
   }
 

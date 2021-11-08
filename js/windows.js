@@ -283,8 +283,7 @@ function openDraggableWindow(windowToOpen){
               $(document.createElement('p')).text(hobbies).prepend($(document.createElement('b')).text("Personal Interests/Hobbies:")),
             ]);
             wind.append([title_bar, window_body]);
-            wind.draggable();
-            $(".desktop").append(wind);
+
             //create program
             program = "logan"
             program_text = "Logan.exe";
@@ -358,8 +357,7 @@ function openDraggableWindow(windowToOpen){
             ]);
             window_body.append(tree);
             wind.append([title_bar, window_body]);
-            wind.draggable();
-            $(".desktop").append(wind);
+
             //create program
             program = "projects";
             program_text = "Projects.exe";
@@ -379,11 +377,10 @@ function openDraggableWindow(windowToOpen){
             //append to window body
             window_body.append([
               $(document.createElement('iframe')).attr({src: "assets/documents/scheid_resume.pdf#toolbar=0", width: "1000px", height: "1000px"}),
-              $(document.createElement('p')).css("text-align", "center").append($(document.createElement('a')).attr({target: '_blank', href: 'assets/documents/SCHEID_RESUME.pdf'}).text("PDF"))
+              $(document.createElement('p')).css("text-align", "center").append($(document.createElement('a')).attr({target: '_blank', href: 'assets/documents/scheid_resume.pdf'}).text("PDF"))
             ]);
             wind.append([title_bar, window_body]);
-            wind.draggable();
-            $(".desktop").append(wind);
+
             //create program
             program = "my-resume";
             program_text = "My_Resume.exe";
@@ -427,8 +424,7 @@ function openDraggableWindow(windowToOpen){
             //append to window body
             window_body.append(form);
             wind.append([title_bar, window_body]);
-            wind.draggable();
-            $(".desktop").append(wind);
+
             //create program
             program = "contact-me";
             program_text = "Contact_Me.exe";
@@ -464,8 +460,7 @@ function openDraggableWindow(windowToOpen){
               $(document.createElement('p')).addClass("status-bar-field").text("CPU Usage: 99%"),
             ]);
             wind.append([title_bar, window_body, status_bar]);
-            wind.draggable();
-            $(".desktop").append(wind);
+
             //create program
             program = "steam";
             program_text = "Steam98";
@@ -526,8 +521,7 @@ function openDraggableWindow(windowToOpen){
             ]);
             window_body.append(tree);
             wind.append([title_bar, window_body]);
-            wind.draggable();
-            $(".desktop").append(wind);
+
             //create program
             program = "steam-help";
             program_text = "Steam98Help";
@@ -561,8 +555,7 @@ function openDraggableWindow(windowToOpen){
             //append to window body
             window_body.append(theme_container);
             wind.append([title_bar, window_body]);
-            wind.draggable();
-            $(".desktop").append(wind);
+
             //create program
             program = "themes";
             program_text = "Themes";
@@ -627,8 +620,7 @@ function openDraggableWindow(windowToOpen){
               aim_header, hr, field_row1, field_row2, field_row3, field_row4, field_row5
             ]);
             wind.append([title_bar, window_body]);
-            wind.draggable();
-            $(".desktop").append(wind);
+
             //create program
             program = "aim";
             program_text = "AOL Instant Messenger";
@@ -659,8 +651,7 @@ function openDraggableWindow(windowToOpen){
               rating_text, field_row1, submit_button
             ]);
             wind.append([title_bar, window_body]);
-            wind.draggable();
-            $(".desktop").append(wind);
+
             //create program
             program = "rating";
             program_text = "Rating";
@@ -681,8 +672,7 @@ function openDraggableWindow(windowToOpen){
             //append to window body
             window_body.append(video);
             wind.append([title_bar, window_body]);
-            wind.draggable();
-            $(".desktop").append(wind);
+
             //create program
             program = "wm-tenacious";
             program_text = "tenacious.mp4";
@@ -703,14 +693,16 @@ function openDraggableWindow(windowToOpen){
             //append to window body
             window_body.append(video);
             wind.append([title_bar, window_body]);
-            wind.draggable();
-            $(".desktop").append(wind);
+
             //create program
             program = "wm-nft";
             program_text = "nft.mp4";
           }
           break;
     }
+
+    wind.draggable();
+    $("#desktop-content").append(wind);
 
     if($('#' + program + '-program-container').length == 0){
       removeProgramClicked();
