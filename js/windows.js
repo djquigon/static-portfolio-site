@@ -43,15 +43,6 @@ function startGame(game){
 }
 
 /**
- * Submit function for rating window.
- */
-function submitRating(){
-    $('#submit-rating').prop('disabled', true);
-    $('#rating-text').text("Duly noted, thanks!");
-    // submit
-}
-
-/**
  * Exits the threejs rocket mode by removing the rocket container.
  */
 function exitFlight(){
@@ -102,6 +93,15 @@ function setZ(clicked_window){
     $(program).removeClass();
     $(program).addClass("program-clicked program");
   }
+}
+
+/**
+ * Submit function for rating window.
+ */
+ function submitRating(){
+  $('#submit-rating').prop('disabled', true);
+  $('#rating-text').text("Duly noted, thanks!");
+  // submit
 }
 
 /**
@@ -637,19 +637,20 @@ function openDraggableWindow(windowToOpen){
             program_text = "AOL Instant Messenger";
           }
           break;  
-        case "rating-icon":
-          if($('#rating').length == 0){
-            icon = $(document.createElement('img')).attr({src: 'images/icons/rating_small.png'});
-            title_text = $(document.createElement('div')).addClass("title-bar-text").text("Rating");
+        case "credit-icon":
+          if($('#credit').length == 0){
+            icon = $(document.createElement('img')).attr({src: 'images/icons/credit_small.png'});
+            title_text = $(document.createElement('div')).addClass("title-bar-text").text("Credits");
             title_bar_text_icon.append([icon, title_text]);
             
             title_bar.append(title_bar_text_icon, title_bar_controls);
 
-            window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'rating'});
+            window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'credit'});
 
             //implement here
+            credit_text = $(document.createElement('p')).attr("id", "credit-text").html("Credits to the creator of 98.css for some of the styling<br>on this site as well cvault finance for the inspiration.");
             rating_text = $(document.createElement('p')).attr("id", "rating-text").text("Leave a rating!");
-            field_row1 = $(document.createElement('div')).addClass("field-row").attr("id", "rating-bar").append([
+            field_row1 = $(document.createElement('div')).addClass("field-row").attr("id", "credit-bar").append([
               $(document.createElement('label')).attr("for", "range22").text("Rating:"),
               $(document.createElement('label')).attr("for", "range23").text("0"),
               $(document.createElement('input')).attr({id: "range23", type: "range", min: "0", max: "10", value: "5"}),
@@ -659,13 +660,13 @@ function openDraggableWindow(windowToOpen){
 
             //append to window body
             window_body.append([
-              rating_text, field_row1, submit_button
+              credit_text, rating_text, field_row1, submit_button
             ]);
             wind.append([title_bar, window_body]);
 
             //create program
-            program = "rating";
-            program_text = "Rating";
+            program = "credit";
+            program_text = "Credits";
           }       
           break;
         case "tenacious_icon":
