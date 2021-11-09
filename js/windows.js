@@ -18,7 +18,7 @@ function startGame(game){
   if($('#steam-program-container').length == 0){
     openDraggableWindow(document.getElementById("steam-icon"));
   }
-  if($('#game').hasClass('no-game') == false){
+  if($('#game').hasClass('no-game') != true){
       alert("⚠️ You need to eject the current game before you can start another one. Please try again.");
       return;
   }
@@ -110,6 +110,12 @@ function setZ(clicked_window){
 function closeWindow(windowToClose){
     //get program name (taskbar)
     program_name = windowToClose.parentNode.parentNode.nextElementSibling.id + "-program-container";
+    //if closing steam, close out game first if one is running
+    if(program_name == "steam-program-container"){
+      if($('#game').hasClass('no-game') != true){
+        ejectGame();
+      }
+    }
     //close window and remove program from taskbar
     windowToClose.parentNode.parentNode.parentNode.remove();
     $( "#" + program_name).remove();
