@@ -648,7 +648,7 @@ function openDraggableWindow(windowToOpen){
             window_body = $(document.createElement('div')).addClass("window-body").attr({id: 'credit'});
 
             //implement here
-            credit_text = $(document.createElement('p')).attr("id", "credit-text").html("Credits to the creator of 98.css for some of the styling<br>on this site as well cvault finance for the inspiration.");
+            credit_text = $(document.createElement('p')).attr("id", "credit-text").html("Credits to the creator of 98.css for some of the styling<br>on this site as well cvault finance for the inspiration.<br>Oh, and of course Microsoft.");
             rating_text = $(document.createElement('p')).attr("id", "rating-text").text("Leave a rating!");
             field_row1 = $(document.createElement('div')).addClass("field-row").attr("id", "credit-bar").append([
               $(document.createElement('label')).attr("for", "range22").text("Rating:"),
