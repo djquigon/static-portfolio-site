@@ -15,28 +15,31 @@ function ejectGame(){
  * Starts the selected game with Steam98.
  */
 function startGame(game){
-    if($('#game').hasClass('no-game') == false){
-        alert("⚠️ Either Steam98 isn't started, or you need to eject the current game before you can start another one. Please try again.");
-        return;
-    }
-    $("#game").attr("class", game);
-    $("#game-title").text(game);
-    $("#menu").css('display', 'none');
-    $("#startbutton").attr("class", "startbutton-off");
-    $("#jsdos").css('display', 'inline-block')
-    Dos(document.getElementById("jsdos"), { 
-        wdosboxUrl: "https://js-dos.com/6.22/current/wdosbox.js",
-        cycles: "auto",
-        autolock: false,
-      }).ready(function (fs, main) {
-        fs.extract("assets/games/" + game + ".zip").then(function () {
-          main(["-c", "cd " + game, "-c", game + ".EXE"]).then(function (ci) {
-            window.ci = ci;
-          });
+  if($('#steam-program-container').length == 0){
+    openDraggableWindow(document.getElementById("steam-icon"));
+  }
+  if($('#game').hasClass('no-game') == false){
+      alert("⚠️ You need to eject the current game before you can start another one. Please try again.");
+      return;
+  }
+  $("#game").attr("class", game);
+  $("#game-title").text(game);
+  $("#menu").css('display', 'none');
+  $("#startbutton").attr("class", "startbutton-off");
+  $("#jsdos").css('display', 'inline-block')
+  Dos(document.getElementById("jsdos"), { 
+      wdosboxUrl: "https://js-dos.com/6.22/current/wdosbox.js",
+      cycles: "auto",
+      autolock: false,
+    }).ready(function (fs, main) {
+      fs.extract("assets/games/" + game + ".zip").then(function () {
+        main(["-c", "cd " + game, "-c", game + ".EXE"]).then(function (ci) {
+          window.ci = ci;
         });
       });
-    //un disable buttons
-    $('.dosbox-button').prop('disabled', false);
+    });
+  //un disable buttons
+  $('.dosbox-button').prop('disabled', false);
 }
 
 /**
