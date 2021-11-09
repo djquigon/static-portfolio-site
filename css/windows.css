@@ -107,6 +107,13 @@
     z-index: 0
 }
 
+#welcome-clippy{
+    position: absolute;
+    height: 20vh;
+    top: 30vh;
+    left: 45%;
+}
+
 .clippy{
     width: 20%;
     height:20%;
