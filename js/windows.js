@@ -114,6 +114,7 @@ function closeWindow(windowToClose){
     if(program_name == "steam-program-container"){
       if($('#game').hasClass('no-game') != true){
         ejectGame();
+        alert("ejected game")
       }
     }
     //close window and remove program from taskbar
