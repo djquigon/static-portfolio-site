@@ -15,6 +15,7 @@ function ejectGame(){
  * Starts the selected game with Steam98.
  */
 function startGame(game){
+  /**Do jquery in jsx */
     if($('#game').hasClass('no-game') == false){
         alert("⚠️ Either Steam98 isn't started, or you need to eject the current game before you can start another one. Please try again.");
         return;
@@ -270,7 +271,7 @@ function openDraggableWindow(windowToOpen){
 
             intro = "Based in Atlanta, Georgia. Started coding towards the end of my first year of college in early 2017 after first learning about Bitcoin. Graduated from the University of Georgia with a major in computer science in spring 2021.";
             work_interests = "Full stack web development but preferably front end work. Working in game development eventually is also a goal of mine.";
-            skills = "Strong experience in python, ranging from web developement using frameworks such as django, to data mining using various libraries such as pandas, numpy, scikit, and tensorflow. Strong experience with javascript where I've utilized various libraries such as node.js, react, jquery, and three.js. And of course with all this in mind, I'm also very familiar with html, and css. Minor experience in java, c++, and c# from schooling and small personal projects in Unity, pretty familiar with java's spring web framework."
+            skills = "Strong experience with javascript where I've utilized various libraries such as node.js, React, ethers.js, jquery, and three.js. Strong experience in python, ranging from web developement using frameworks such as django, to data mining using various libraries such as pandas, numpy, scikit, and tensorflow. And of course with all this in mind, I'm also very familiar with html, and css. Minor experience in java, c++, and c# from schooling and small personal projects in Unity, pretty familiar with java's spring web framework."
             hobbies = "Coding, researching Crypto/DeFi/Web3, watching Atlanta sports teams, grilling, traveling, playing/modding/developing video games."
 
 
@@ -305,11 +306,20 @@ function openDraggableWindow(windowToOpen){
             item2 = $(document.createElement('li')).text("What do I work on?").append(
               $(document.createElement('ul')).append($(document.createElement('li')).text(steam98_text))
             );
+            walletWatchoor = $(document.createElement('li')).append($(document.createElement('details')).append([
+              $(document.createElement('summary')).text("wallet watchoor"),
+              $(document.createElement('ul')).append([
+                $(document.createElement('li')).append($(document.createElement('img')).attr("src", "images/walletWatchoor_project.PNG").css("width", "100px")),
+                $(document.createElement('li')).text("A web3 app for tracking addresses on the Ethereum mainnet and interacting with other community members. Built with React, Node.js, and Ethers.js."),
+                $(document.createElement('li')).append($(document.createElement('a')).text("Link").css("color", "#00f").attr({href: "https://walletwatchoor.net/", target: "_blank"})),
+                $(document.createElement('li')).append($(document.createElement('a')).text("Source Code").css("color", "#00f").attr({href: "https://github.com/djquigon/wallet-watchoor", target: "_blank"})),
+              ])
+            ]));
             web3xr = $(document.createElement('li')).append($(document.createElement('details')).append([
               $(document.createElement('summary')).text("web3xr"),
               $(document.createElement('ul')).append([
                 $(document.createElement('li')).append($(document.createElement('img')).attr("src", "images/web3xr_project.PNG").css("width", "100px")),
-                $(document.createElement('li')).text("A web app containing a small demo exemplifying what's possible when combining web3.js, WebXR, and Three.js."),
+                $(document.createElement('li')).text("A web app containing a small demo exemplifying what's possible when combining ethers.js, WebXR, and Three.js."),
                 $(document.createElement('li')).append($(document.createElement('a')).text("Medium Link").css("color", "#00f").attr({href: "https://medium.com/@scheidlogan", target: "_blank"})),
                 $(document.createElement('li')).append($(document.createElement('a')).text("Source Code").css("color", "#00f").attr({href: "https://github.com/djquigon", target: "_blank"})),
               ])
@@ -353,7 +363,7 @@ function openDraggableWindow(windowToOpen){
             //implement here
             //append to window body
             tree.append([
-              item1, item2, web3xr, pokedex, exoplanet, sentiment, ugastats
+              item1, item2, walletWatchoor, web3xr, pokedex, exoplanet, sentiment, ugastats
             ]);
             window_body.append(tree);
             wind.append([title_bar, window_body]);
