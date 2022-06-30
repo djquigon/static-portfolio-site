@@ -364,7 +364,6 @@ function openDraggableWindow(windowToOpen){
               $(document.createElement('ul')).append([
                 $(document.createElement('li')).append($(document.createElement('img')).attr("src", "images/ugastats_project.jpeg").css("width", "100px")),
                 $(document.createElement('li')).text("A web app for UGA football statistics junkies. Users can create accounts to view and save their favorite players and stats."),
-                $(document.createElement('li')).append($(document.createElement('a')).text("Medium Link").css("color", "#00f").attr({href: "https://medium.com/@scheidlogan", target: "_blank"})),
                 $(document.createElement('li')).append($(document.createElement('a')).text("Source Code").css("color", "#00f").attr({href: "https://github.com/djquigon", target: "_blank"})),
               ])
             ]));
