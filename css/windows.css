@@ -1,4 +1,4 @@
-#desktop-content{
+#desktop-content {
     width: max-content;
     height: max-content;
     margin: 0 auto;
@@ -9,21 +9,21 @@
     justify-content: space-between;
 }
 
-#welcome{
+#welcome {
     width: 320px;
     margin: auto;
     margin-top: 3vh;
 }
 
-#credit-bar{
+#credit-bar {
     margin-bottom: 10%;
 }
 
-#spinning-quigon{
+#spinning-quigon {
     text-align: center;
 }
 
-.desktop{
+.desktop {
     height: 100vh;
     width: 100vw;
     background-color: #008080;
@@ -33,56 +33,67 @@
     position: fixed;
 }
 
-#desktop-icons{
+#desktop-icons {
     position: absolute;
     padding-left: 1vw;
     padding-top: 2vh;
     z-index: -999;
 }
 
-.desktop-icon{
+.desktop-icon {
     display: block;
     text-align: center;
     text-decoration: none;
-    font-family: "Pixelated MS Sans Serif", Tahoma;
-    color:#ffffff;
+    font-family: 'Pixelated MS Sans Serif', Tahoma;
+    color: #ffffff;
     margin-bottom: 4vh;
+    padding: 5px;
 }
 
-.desktop-icon img{
+.desktop-icon p {
+    margin-bottom: 0;
+}
+
+.desktop-icon:hover {
+    background-color: #002d805b;
+}
+
+.desktop-icon img {
     height: 3vh;
 }
 
-.icon-overlay{
+.icon-overlay {
     background-color: rgba(0, 0, 165, 0.6);
 }
 
-.window{
-    box-shadow: 5px 5px 20px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+.window {
+    box-shadow: 5px 5px 20px #0a0a0a, inset 1px 1px #dfdfdf,
+        inset -2px -2px grey, inset 2px 2px #fff;
 }
 
-#dosbox *{
+#dosbox * {
     margin-bottom: 0%;
-    font-family: "Pixelated MS Sans Serif", Tahoma;
-    color: #6cf24f
+    font-family: 'Pixelated MS Sans Serif', Tahoma;
+    color: #6cf24f;
 }
 
-.dosbox-button{
+.dosbox-button {
     width: 20%;
     margin-bottom: 1vh;
     margin-top: 1vh;
 }
 
-.dosbox-container { 
-    width: 640px; height: 480px; 
+.dosbox-container {
+    width: 640px;
+    height: 480px;
 }
 
-.dosbox-canvas{
+.dosbox-canvas {
     width: 640px;
     height: 400px;
 }
 
-.dosbox-container > .dosbox-overlay { 
+.dosbox-container > .dosbox-overlay {
     background: url('../images/icons/spinning_quigon.gif') no-repeat;
     background-position: center;
     background-color: black;
@@ -90,149 +101,151 @@
 
 #game-container {
     margin-top: 0;
-    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf,
+        inset -2px -2px grey, inset 2px 2px #fff;
 }
 
 #game-screen {
-    height:480px;
+    height: 480px;
     width: 640px;
     background: url('../images/icons/spinning_quigon.gif') no-repeat;
     background-position: center;
     background-color: black;
 }
 
-#jsdos{
-    width:100%;
-    height:100%;
-    z-index: 0
+#jsdos {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
-#welcome-clippy{
+#welcome-clippy {
     position: absolute;
     height: 20vh;
     top: 30vh;
     left: 45%;
 }
 
-.clippy{
+.clippy {
     width: 20%;
-    height:20%;
-    position:fixed;
+    height: 20%;
+    position: fixed;
     background: url('../images/clippycursed.gif') no-repeat;
     background-position: center;
     z-index: 999;
 }
 
-#intro-title-bar{
+#intro-title-bar {
     justify-content: flex-start;
 }
 
-.title-bar img, .title-bar div img{
+.title-bar img,
+.title-bar div img {
     padding-right: 4px;
 }
 
-.dark-title-bar{
-    background: linear-gradient(90deg,#070707,#363636);
+.dark-title-bar {
+    background: linear-gradient(90deg, #070707, #363636);
 }
 
-.rose-gold-title-bar{
-    background: linear-gradient(90deg,#e27474,#d0a610);
+.rose-gold-title-bar {
+    background: linear-gradient(90deg, #e27474, #d0a610);
 }
 
-.clouds-title-bar{
-    background: linear-gradient(90deg,#508bcf,#9dc9e6);
+.clouds-title-bar {
+    background: linear-gradient(90deg, #508bcf, #9dc9e6);
 }
 
-.cybercity-title-bar{
-    background: linear-gradient(129deg,#ac4406,#00244e);
+.cybercity-title-bar {
+    background: linear-gradient(129deg, #ac4406, #00244e);
 }
 
-.cybernightcity-title-bar{
-    background: linear-gradient(9deg,#fc30e6,#13ffff);
+.cybernightcity-title-bar {
+    background: linear-gradient(9deg, #fc30e6, #13ffff);
 }
 
-.galaxy-title-bar{
-    background: linear-gradient(90deg,#000055,#b46caa);
+.galaxy-title-bar {
+    background: linear-gradient(90deg, #000055, #b46caa);
 }
 
-.xp-title-bar{
+.xp-title-bar {
     background: #245ddb;
 }
 
-.doge-title-bar{
-    background: linear-gradient(90deg,#c99a40,#ccbf9c);
+.doge-title-bar {
+    background: linear-gradient(90deg, #c99a40, #ccbf9c);
 }
 
-.star-wars-title-bar{
-    background: linear-gradient(90deg,#1d0766,#c60093);
+.star-wars-title-bar {
+    background: linear-gradient(90deg, #1d0766, #c60093);
 }
 
-#draggable-window{
+#draggable-window {
     top: 15%;
     text-align: left;
     width: max-content;
     height: max-content;
 }
 
-#rocket-container{
+#rocket-container {
     height: 100%;
     width: 100%;
     position: absolute;
     display: none;
     top: 0;
     left: 0;
-  }
-  
-  #rocket-container canvas{
+}
+
+#rocket-container canvas {
     position: inherit;
     width: 100%;
     height: 100%;
-    overflow-x:hidden;
-  }
-  
-  #rocket-container button{
+    overflow-x: hidden;
+}
+
+#rocket-container button {
     position: absolute;
-  }
+}
 
-  .shortcut{
-      position:absolute;
-  }
+.shortcut {
+    position: absolute;
+}
 
-  #aim-button-row img{
+#aim-button-row img {
     height: 25px;
     width: 25px;
-     cursor: pointer;
-  }
+    cursor: pointer;
+}
 
-  #aim-button-row{
-      display: flex;
-      justify-content: space-between;
-  }
+#aim-button-row {
+    display: flex;
+    justify-content: space-between;
+}
 
-  #aim-button-row div div p, #aim-button-row div p{
+#aim-button-row div div p,
+#aim-button-row div p {
     margin-top: 1px;
-  }
+}
 
-  #steam-help{
-      text-align: left;
-  }
+#steam-help {
+    text-align: left;
+}
 
-  .purp{
-      width: 100px;
-      height: 100px;
-  }
+.purp {
+    width: 100px;
+    height: 100px;
+}
 
-  #logan{
+#logan {
     width: 460px;
-  }
+}
 
-  #recycle-container{
+#recycle-container {
     right: 2vw;
     bottom: 4vh;
     position: absolute;
-  }
+}
 
-  #steam-help-list a {
+#steam-help-list a {
     color: #00f;
-  }
-  
+}
